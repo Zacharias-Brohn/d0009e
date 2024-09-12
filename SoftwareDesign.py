@@ -11,6 +11,52 @@ def dis(x1,y1,x2,y2):
     # result = math.sqrt((x2-x1)**2 + (y2-y1)**2)
     # return result
     return math.sqrt((x2-x1)**2 + (y2-y1)**2)
+	
+#========================================================
 
-v=dis(1,2,4,6)
-print(v)
+def isDivisible(x,y):
+	# if x%y == 0:
+	#	return True
+	# else:
+	#	return False
+	return (x%y) == 0
+
+#========================================================
+	
+def printBool():	
+	# if isDivisible(x,y) == True:
+	#	print("x is divisible by y")
+	# else:
+	#	print("x isn't divisible by y")
+	
+	if isDivisible(x,y):
+		print("x is divisible by y")
+	else:
+		print("x isn't divisible by y")
+
+#========================================================
+
+def printRow(n,a):
+	i=1
+	while i <= a:
+		print(n*i,'\t',end="")
+		i=i+1
+	print()
+	return
+
+def printTable(a):
+	i=1
+	while i <= a:
+		printRow(i,i)
+		i=i+1
+	return
+printTable(8)
+
+#def printTable(a):
+#	i=1
+#	while i <= a:
+#		printRow(i,a)
+#		i=i+1
+#	return
+
+
