@@ -3,19 +3,19 @@ import math
 def derivative(f,x,h):
 	return (f(x+h)-f(x-h))/(2*h)
 
-# Exempel 1, f(x) = sin(x), f'(x) = cos(x)
+# Exempel 1, f(x) = sin(x), f'(x) = cos(x), x = π / 4
 approxDerivative1 = derivative(math.sin,(math.pi/4),1e-5)
 actualDerivative1 = math.cos(math.pi/4)
 print("f(x) = sin(x) at x = π/4: \nApproximate",f"= {approxDerivative1}\nActual","",f"= {actualDerivative1}",sep="\t")
 
-# Exempel 2, f(x) = x^2, f'(x) = 2x
+# Exempel 2, f(x) = x^2, f'(x) = 2x, x = 2
 def square(x):
 	return x ** 2
 approxDerivative2 = derivative(square,2,1e-5)
 actualDerivative2 = 2 * 2
 print("\nf(x) = x^2 at x = 2: \nApproximate",f"= {approxDerivative2}\nActual","",f"= {actualDerivative2}",sep="\t")
 
-# Exempel 3, f(x) = ln(x), f'(x) = 1/x
+# Exempel 3, f(x) = ln(x), f'(x) = 1/x, x = 0.1
 approxDerivative3 = derivative(math.log,0.1,1e-5)
 actualDerivative3 = 1 / 0.1
 print("\nf(x) = ln(x) at x = 0.1: \nApproximate",f"= {approxDerivative3}\nActual","",f"= {actualDerivative3}",sep="\t")
