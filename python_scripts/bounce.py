@@ -1,4 +1,23 @@
-0 till n
+def bounce(n):
+    # Skriv nuvarande nummer
+    print(n)
+
+    # Om n=0 avslutas funktion
+    if n == 0:
+        return
+
+    # Rekursiv nedräkning
+    bounce(n - 1)
+
+    # Pga. python funk. stack skriv upp från 0
+    print(n)
+
+def bounce2(n):
+    # Loop räknar ned från n till 0
+    for i in range(n, -1, -1):
+        print(i)
+    
+    # Loop räknar upp från 0 till n
     for i in range(1, n + 1):
         print(i)
 
@@ -21,3 +40,4 @@ def tvarsumman2(n):
         n //= 10
     
     return total
+import d0009e_lab2_sumTest.py
