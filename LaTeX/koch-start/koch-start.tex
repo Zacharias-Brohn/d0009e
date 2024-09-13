@@ -4,6 +4,7 @@
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{changepage}
 \usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
+\usepackage{caption}
 \newtheorem{theorem}{Theorem}
 
 \begin{document}
@@ -16,10 +17,7 @@ matician Helge von Koch~\cite{koch}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{snowflake.jpg}
-	\begin{minipage}{\textwidth}
-		\hspace{-1cm}
-		\caption{The Koch snowflake after 0, 1, 2, and 3 iterations.}
-	\end{minipage}
+	\caption{The Koch snowflake after 0, 1, 2, and 3 iterations.}
 	\label{koch}
 \end{figure}
 It is what we get if we start with an equilateral triangle    and repeat the following an infinite number of times:
@@ -67,40 +65,42 @@ Figure~\ref{koch} shows the first iterations in the construction.\hfill(Original
   Since 4$/$3 $>$ 1, it follows that $N_nL_n$ tends to infinity as $n \to \infty$, which means the Koch snowflake indeed has infinite length.
 \end{proof}
 
-  The Koch snowflake has finite area. 
-
-  
-  In an iteration,, the number of new triangles $T_n$,
-    Eq.~\ref{eq:1}, can be simplified to 
-
-    \label{eq:2}
-
-    
-  $a_n$
-  \begin{displaymath}
-    a_0=
-  \end{displaymath}
-  $\Delta$, the initial equilateral triangle,, or 
-  \begin{equation}
-    \label{eq:3}
-    a_n = \frac{a_{n-1}}{9} = \ldots .
-  \end{equation}
-  Eqs.~\ref{eq:2} and \ref{eq:3}
-  \begin{equation*}
-    b_n = = \left( \cdot 4^n \right) \left( a_0 \right)  =. 
-  \end{equation*}
-  total area
-  \begin{align*}
-    A &= a + \sum_{k=1}^n b \\
-      &= a_0\left(1 + \left( \right)^k \right) \\
-      &= .
-   \end{align*}
-  Now, since
-  \begin{displaymath}
-    \lim_{n} 3\left( \right) = 0,
-  \end{displaymath}
-  $\lim_{\to \infty} A_n$..  
-
+\begin{theorem}
+	The Koch snowflake has finite area.
+\end{theorem}
+\begin{proof}  
+  In an iteration, a single triangle is added on each line segment of the previous iteration. So, in iteration $n$, the number of new triangles $T_n = N_{n-1}$, which, by Eq.~\ref{eq:1}, can be simplified to 
+	\begin{equation}
+		\label{eq:2}
+		T_n = \frac{3}{4} \cdot 4^n.
+	\end{equation}
+	The area $a_n$ of each such triangle, with the exception of the area
+	\begin{displaymath}
+		a_n = \frac{\sqrt{3}}{4}s^2
+	\end{displaymath}
+	of $\Delta$, the initial equilateral triangle, is one ninth of the area of a triangle added in iteration $n - 1$, or 
+	\begin{equation}
+    	\label{eq:3}
+    	a_n = \frac{a_{n-1}}{9} = \frac{a_{n-2}}{9^2} =  \ldots = \frac{a_1}{9^{n-1}} = \frac{a_0}{9^n}..
+    \end{equation}
+    This means that in iteration $n$, by Eqs.~\ref{eq:2} and \ref{eq:3}, the area of all added triangles
+    \begin{equation}
+    	b_n = T_na_n = \left(\frac{3}{4} \cdot 4^n \right) \left(\frac{a_0}{9^n}\right)  = \frac{3a_0}{4} \left(\frac{4}{9}\right)^n.
+    \end{equation}
+    All in all, after iteration $n$, the total area
+    \begin{align*}
+    	A_n &= a_0 + \sum_{k=1}^nb_k \\
+    	&= a_0\left(1 + \frac{3}{4}\sum_{k=1}^n\left(\frac{4}{9}\right)^k\right) \\
+    	&= a_0\left(1 + \frac{1}{3}\sum_{k=0}^{n-1}\left(\frac{4}{9}\right)^k\right) \\
+    	&= a_0\left(1 + \frac{3}{5}\left(1 - \left(\frac{4}{9}\right)^n\right)\right) \\
+    	&= \frac{a_0}{5}\left(8 - 3\left(\frac{4}{9}\right)^n\right).
+    \end{align*}
+    Now, since the denominator is larger than the numerator,
+    \begin{displaymath}
+    	\lim_{n\to\infty} 3\left(\frac{4}{9}\right)^n = 0,
+    \end{displaymath}
+    it follows that $\lim_{\to \infty} A_n$. This shows that the Koch snowflake indeed has finite area.  
+\end{proof}
 
 
 \begin{thebibliography}{99}
