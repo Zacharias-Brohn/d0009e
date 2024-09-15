@@ -1,0 +1,368 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
+\usepackage[left]{lineno}
+\newtheorem{theorem}{Theorem}
+\usepackage{framed}
+
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+    \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+    \renewenvironment{#1}%
+    {\linenomath\csname old#1\endcsname}%
+    {\csname oldend#1\endcsname\endlinenomath}}% 
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+    \patchAmsMathEnvironmentForLineno{#1}%
+    \patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+    \patchBothAmsMathEnvironmentsForLineno{equation}%
+    \patchBothAmsMathEnvironmentsForLineno{align}%
+    \patchBothAmsMathEnvironmentsForLineno{flalign}%
+    \patchBothAmsMathEnvironmentsForLineno{alignat}%
+    \patchBothAmsMathEnvironmentsForLineno{gather}%
+    \patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+\renewcommand\linenumberfont{\normalfont\bfseries\small}
+
+% -------------------------------------------------------------
+
+\title{Om att skriva tydliga \LaTeX-manus}
+%
+\author{Håkan Jonsson\thanks{email: \texttt{hj@ltu.se}} \\  
+        ~ \\
+        Luleå tekniska universitet \\ 
+        971 87 Luleå, Sverige}
+%          
+\date{\today}
+
+\begin{document}
+
+\linenumbers
+
+\maketitle
+
+\begin{abstract}
+    \LaTeX-manus ska vara lätta att läsa och förstå. Detta uppnås genom
+    logisk gruppering av manusets delar som gör manuset strukturerat. 
+\end{abstract}
+
+\section{Introduktion}
+
+Eftersom \LaTeX-manus ska läsas och förstås av inte bara maskiner utan
+också männsikor ska de vara strukturerade och välskrivna. Vi säger att
+innehållet ska vara \emph{logiskt grupperat och formulerat}. Med detta
+menas att kommandon och andra grupperingsinstruktioner skrivs på ett
+sätt så en människa lätt kan se vilka delar som hör ihop och vad som
+påverkas/är del av/innesluts av vad.
+
+Att skriva \LaTeX-manus är som att programmera, fast med den
+skillnaden att resultatet blir ett dokument och inte ett körbart
+datorprogram. Precis som det i detta dokument radas upp ett antal
+skrivregler för \LaTeX-manus finns i regel motsvarande regler då man
+programmerar t~ex python, Java eller C. En sån regelsamling kallas
+\emph{kodningsstandard}. 
+
+I avsnitt~\ref{sect:meningar} nedan beskrivs hur matematiska symboler,
+formler, uttryck mm ska gå att läsa som vanlig text och tillsammans
+med alla annan text. Sen förklaras kort hur du ska skriva dina
+\LaTeX-manus i avsnitt~\ref{sect:skrivregler}. Men först går vi i
+nästa avsnitt igenom några enkla sätt, här kallade ''verktyg'', att
+förbättra ett manus läsbarhet på. 
+
+\section{Verktyg}
+
+Vi använder 4 olika ''verktyg'' för att göra ett manus lättläst och
+tydligt. De är \emph{indentering}, \emph{radbrytning}, \emph{justering
+i horisontalled} och \emph{separering i vertikalled}. I det följande
+beskrivs vart och ett i ordning.  
+
+\subsection*{Verktyg 1: Indentering}
+
+Detta innebär att kod och text startar en bit in på raderna.
+Manusdelar inne i en omgivning ska konsekvent indenteras in
+ytterligare i förhållande till hur omgivningens \texttt{begin} och
+\texttt{end} indenterats. Hur mycket anges i mellanslag och vanliga
+antal är 2, 4 och 8. Om vi t~ex indenterar med 4 mellanslag så skriver
+vi om koden  
+%
+\begin{verbatim}
+\begin{theorem}
+\begin{displaymath}
+f(n) = 
+\begin{cases}
+1, & \text{om $n=0$ och} \\
+nf(n-1) & \text{annars.}
+\end{cases}
+\end{displaymath}
+\end{theorem}
+\end{verbatim}
+%
+till~(\verb*! ! markerar här ett mellanslag): 
+%
+\begin{verbatim*}
+\begin{theorem}
+    \begin{displaymath}
+        f(n) = 
+        \begin{cases}
+            1, & \text{om $n=0$ och} \\
+            nf(n-1) & \text{annars.}
+        \end{cases}
+    \end{displaymath}
+\end{theorem}
+\end{verbatim*}
+%
+Notera hur kod som är inuti annan kod indenteras ytterligare 4
+mellanslag. I den senare kodversionen ovan är t~ex 
+\begin{itemize}
+  \item \dots raden \verb! 1 & \text{om $n=0$ och} \\! indenterad 4
+    mellanslag mer än
+
+  \item \dots raden med \verb!\begin{cases}! som är lika mycket indenterad som
+
+  \item \dots raden med \verb!f(n) =! som är indenterad 4 mellanslag mer än
+
+  \item \dots raden med \verb!\begin{displaymath}! som i sin tur är
+    indenterad 4 mellanslag mer än
+
+  \item raden med \verb!\begin{theorem}! som har indentering 0.
+\end{itemize}
+I de allra flesta fall har indenteringen ingen betydelse för hur det
+färdiga dokumentet kommer att se ut. Båda koderna ovan ger
+%    
+\begin{theorem}
+    \begin{displaymath}
+        f(n) = 
+        \begin{cases}
+            1, & \text{om $n=0$ och} \\
+            nf(n-1) & \text{annars.}
+        \end{cases}
+    \end{displaymath}
+\end{theorem}
+%   
+\noindent Men den indenterade versionen är mycket lättare att förstå.
+
+\subsection*{Verktyg 2: Radbrytning}
+
+Vi fyller vanligen raderna med kod och text. Om det bättrar på läsbarheten
+är det dock befogat att radbryta texten inne på en rad. Detta betyder
+att man inte använder hela raden och är vanligt i långa matematiska
+uttryck, som annars kan vara svåra att begripa. T~ex är det inte så
+enkelt att omedelbart se att koden
+%    
+\begin{verbatim}
+\begin{align*}
+    (x+h)^2-x^2&=x^2+2xh+h^2-x^2\\&=2xh+h^2\\&=h(2x+h)
+\end{align*}
+\end{verbatim}
+%
+blir
+%    
+\begin{align*}
+    (x+h)^2-x^2&=x^2+2xh+h^2-x^2\\&=2xh+h^2\\&=h(2x+h)
+\end{align*}
+%
+i det färdiga dokumentet. Betydligt mera lättläst är det att
+istället skriva koden som
+%
+\begin{verbatim}
+\begin{align*}
+    (x+h)^2-x^2&=x^2+2xh+h^2-x^2\\
+    &=2xh+h^2\\
+    &=h(2x+h).
+\end{align*}
+\end{verbatim}
+
+\subsection*{Verktyg 3: Justering i horisontalled}
+
+Detta innebär att stoppa in mellanslag inne på rader för att 
+1) dels tydligt separera innehållsdelar åt,
+2) dels justera likartat innehåll på efter varandra följande
+   rader mot varandra horisontellt. 
+Koden i radbrytningsexemplet ovan blir t~ex ännu lättare att
+läsa och förstå om vi glesar ut och justerar den så här:
+%
+\begin{verbatim}
+\begin{align*}
+    (x + h)^2 - x^2 &= x^2 + 2xh + h^2 - x^2 \\
+                    &= 2xh + h^2             \\
+                    &= h(2x + h).
+\end{align*}
+\end{verbatim}
+%
+Här har vi stoppat in mellanslag runt operatorer, så utryckens
+termer klarare ska framgå. Vi har också skjutit in de sista
+två raderna så alla tre \verb!&=! hamnar under varandra. Samma
+förbättring kan göras i t~ex tabeller. Figur~\ref{fig:f1} visar ett
+exempel\footnote{Tabellen visar alla som vunnit Formel~1-VM minst 4
+gånger till år 2021.}.
+%
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{|l|c|l|}
+        \hline \hline
+        Förare & Vinster & Säsonger \\
+        \hline \hline      
+        Michael Schumacher & 7 & 1994--1995, 2000--2004 \\
+        \hline
+        Lewis Hamilton & 7 & 2008, 2014--2015, 2017--2020 \\
+        \hline
+        Juan Manuel Fangio & 5 & 1951, 1954--1957 \\
+        \hline
+        Alain Prost & 4 & 1985--1986, 1989, 1993 \\
+        \hline
+        Sebastian Vettel & 4 & 2010--2013 \\ 
+        \hline \hline
+    \end{tabular}
+    \caption{Vinnare av förarmästerskapet i Formel 1}
+    \label{fig:f1}
+\end{figure}
+
+Det går att skapa en sån här tabell på många sätt i \LaTeX. Här är ett
+sätt som använder \texttt{tabular}-omgivningen:
+%
+\begin{verbatim}
+\begin{tabular}{|l|c|l|} 
+\hline \hline Förare & Vinster & Säsonger \\ \hline \hline Michael
+Schumacher & 7 & 1994--1995, 2000--2004 \\ \hline Lewis Hamilton &
+7 & 2008, 2014--2015, 2017--2020 \\ \hline Juan Manuel Fangio & 5 &
+1951, 1954--1957 \\ \hline Alain Prost & 4 & 1985--1986, 1989, 1993 \\
+\hline Sebastian Vettel & 4 & 2010---2013 \\ \hline \hline
+\end{tabular}
+\end{verbatim}
+%
+Dessa 7 kodrader är väldigt svåra att tyda. Om man benar upp raderna och
+använder verktyg~1 och 2, dvs både \emph{indenterar} och \emph{radbryter}
+de uppbenade raderna, får vi istället det betydligt mera lättbegripliga 
+%
+\begin{verbatim}
+\begin{tabular}{|l|c|l|}
+    \hline \hline
+    Förare & Vinster & Säsonger \\
+    \hline \hline      
+    Michael Schumacher & 7 & 1994--1995, 2000--2004 \\
+    \hline
+    Lewis Hamilton & 7 & 2008, 2014--2015, 2017--2020 \\
+    \hline
+    Juan Manuel Fangio & 5 & 1951, 1954--1957 \\
+    \hline
+    Alain Prost & 4 & 1985--1986, 1989, 1993 \\
+    \hline
+    Sebastian Vettel & 4 & 2010---2013 \\ 
+    \hline \hline
+\end{tabular}
+\end{verbatim}
+%    
+Även denna kods läsbarhet går dock att förbättra genom att amvända
+verktyget \emph{justering i horisontalled}.
+%
+\begin{verbatim}
+\begin{tabular}{|l|c|l|}
+    \hline \hline
+    Förare             & Vinster & Säsonger                     \\
+    \hline \hline      
+    Michael Schumacher &    7    & 1994--1995, 2000--2004       \\
+    \hline
+    Lewis Hamilton     &    7    & 2008, 2014--2015, 2017--2020 \\
+    \hline
+    Juan Manuel Fangio &    5    & 1951, 1954--1957             \\
+    \hline
+    Alain Prost        &    4    & 1985--1986, 1989, 1993       \\
+    \hline
+    Sebastian Vettel   &    4    & 2010---2013                  \\ 
+    \hline \hline
+\end{tabular}
+\end{verbatim}    
+
+\subsection*{Verktyg 4: Separering i vertikalled}
+
+Denna typ av separering görs med tomrader och procenttecken. Om det
+passar med ett nytt stycke, kan vi separera med en eller flera
+tonmrader efter varandra; tomrader översätts ju nytt stycke i det
+färdiga pdf-dokumentet. Där nytt stycke inte passar kan vi istället
+lägga in rader som endast innehåller ett procenttecken
+(\verb!%!). Allt på en rad efter ett procenttecken, inkludive
+procenttecknet, ignoreras av \LaTeX-systemet. 
+
+Manuset till detta dokument innehåller många exempel på separering
+i vertikalled med både tomrad och ''procentrader''. Notera särskilt
+hur alla rubrikrader, möjligen inklusive etikettrader, omges av tomrader. 
+
+\section{Allt är meningar}
+\label{sect:meningar}
+
+Matematiska uttryck bara är \emph{förkortade skrivsätt} för vanlig
+text, som är nedskrivna tankar. Att vi överhuvudtaget använder
+matematisk notation och matematiska symboler är för att det är lättare
+att vara \emph{entydlig} med sån jämfört med vanlig text. Matematiken
+tillför inget annat. 
+
+Eftersom matematisk text endast är komprimerade versioner av vanlig
+text så ska det alltid gå att läsa de matematiska delarna av en text som att
+den ingår i hela textflödet. Alltså, de ekvationer och formler som
+finns ska gå att ersätta med vad de egentligen betyder och allt ska sen
+gå att läsa. Här har vi ett litet exempel från elektrotekniken:
+%
+\begin{framed}
+    \noindent Enligt elkretsteori är spänningen
+%
+    \begin{equation}
+        \label{eq:1}  
+        U = RI,        
+    \end{equation}  
+%
+    där $R$ är resistansen och $I$ strömmen. 
+\end{framed}
+%
+Detta går lätt att läsa:
+%
+\begin{quote}
+    ''Enligt elkretsteori är spänningen $U$ lika med $R$
+    gånger $I$, där $R$ är resistansen och $I$ strömmen.''
+\end{quote}
+%
+Och sen kan vi fortsätta med t~ex att
+skriva 
+%
+\begin{framed}
+  \noindent För effekten, $P$, gäller att $P = IU$.
+  Ekvation~\ref{eq:1} insatt i effektsambandet ger då att  
+%
+    \begin{equation}
+        P = RI^2,
+    \end{equation}
+%
+    ett alternativt effektsamband som beror av resistans och ström
+    snarare än spänning och ström.
+\end{framed}
+
+Läs även det ovan högt för dig själv. Notera kommatecknet efter den
+sista formeln eftersom meningen fortsätter ända fram till punkt. 
+
+\section{Några råd om hur  \LaTeX-manus bör skrivas}
+\label{sect:skrivregler}
+
+Manus skrivs inte bara för LaTeX-systemet utan även för dig själv och
+andra människor. Ett konsekvent utformat och i övrigt välskrivet manus
+är lätt att förstå även långt senare. Det främjar även samarbete.
+
+I det riktigt bra manuset används genomgående de fyra verktygen 
+\begin{itemize}
+  \item indentering,
+  
+  \item radbrytning,
+
+  \item justering i horisontalled och
+
+  \item separering i vertikalled
+\end{itemize}
+%
+som tidigare introducerats. Viktigt är då att användningen av
+verktygen är konsekvent genom hela manuset. T~ex är indenteringen
+densamma överallt och oberoende av indenteringsdjup. Man kan
+sammanfatta det med att samma skrivregler ska vara tillämpade genom
+hela manuset och att det i manusets hela kod ska råda ''ordning och
+reda''. 
+
+\end{document}
