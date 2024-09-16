@@ -92,7 +92,22 @@ $y = 0,5e^{-x^2}$ $\>$ $\>$ där $\>$ $\>$ $0 \leq x \leq 2,5$\\
   \begin{addmargin}[1em]{1em}
     Bestäm backens lutning för $x = 0,8$.\\
   \end{addmargin}
-Vi har grafens funktion så kan vi 
+  För att räkna fram lutningen måste vi lista ut och använda funktionens derivata $f'(x)$. Genom att använda kedjeregeln $(f(g(x)) = f'(g(x))g'(x))$ så får vi
+  \begin{equation}
+    \frac{d}{dx}\left(e^{-x^2}\right) = \frac{d}{dx}e^4\frac{du}{dx},
+  \end{equation}
+  där
+  \begin{displaymath}
+    u = -x^2
+  \end{displaymath}
+  och
+  \begin{displaymath}
+    \frac{d}{du}\left(e^4\right) = e^u
+  \end{displaymath}
+  och där
+  \begin{displaymath}
+    \frac{d}{dx}\left(-x^2\right) = -2x \text{ ty,} \frac{d}{dx} = n \cdot x^{n-1}.
+  \end{displaymath}
 \section{Nästa (del-) uppgift}
 \label{sec:uppg2}
 
