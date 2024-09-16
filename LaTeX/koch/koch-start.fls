@@ -43,8 +43,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/changepage/changepage.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/changepage/changepage.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty

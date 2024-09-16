@@ -2,7 +2,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage{changepage}
 \usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
 \newtheorem{theorem}{Theorem}
 
@@ -18,30 +17,22 @@ matician Helge von Koch~\cite{koch}.
 	\includegraphics[width=10cm]{snowflake.jpg}
   \caption{The Koch snowflake after 0, 1, 2, and 3 iterations. }
 \end{figure}
-It is what we get if we start with an equilateral triangle    and repeat the following an infinite number of times:
+It is what we get if we start with an equilateral triangle and repeat the following an infinite number of times:
 \begin{quote}
-\textit{Divide all line segments into three segments of equal length. Then draw, for each middle line segment, an equilateral triangle that has the middle segment as its base and points outward. Finally, remove all middle segments.}
+\textit{Divide all line segments into three segments of equal length. Then draw, for each middle line segment, an equilateral triangle that has the middle segment as its base and points outward. Finally, remove all middle segments. }
 \end{quote}
-Figure~\ref{koch} shows the first iterations in the construction.
+Figure~\ref{koch} shows the first iterations in the construction. \hfill (Original)
 \section{Two properties}
 \begin{theorem}
   The Koch snowflake has infinite length. 
 \end{theorem}
 \begin{proof}
-  Let
-  $\Delta$
-  denote a triangle, with side length $s$, on which we base the construction of a snowflake.
-  Let
-  $N_i$ 
-  denote the number of line segments, 
-  and
-  $L_i$ 
-  the length of the segments, in iteration $i$ of the construction.
-  Then
+   Let $\Delta$ denote a triangle, with side length $s$, on which we base the construction of a snowflake. Let $N_i$ denote the number of line segments, and $L_i$ the length of the segments, in iteration $i$ of the construction. Then 
   \begin{displaymath}
-    N_n =
+    N_n=
     \begin{cases}
-      3, &\text{if $n=0$ (i.e. before any iterations), and}\\4N_{n-1},&\text{otherwise.}
+      3,       &\text{if $n=0$ (i.e.~before any iterations), and} \\ 
+      4N_{n-1},&\text{otherwise.}
     \end{cases}
   \end{displaymath}
   This solves to
@@ -49,7 +40,7 @@ Figure~\ref{koch} shows the first iterations in the construction.
     \label{eq:1}
     N_n = 3 \cdot 4^n,
   \end{equation}
-   while  
+   while
   \begin{equation}
     \label{eq:5}
     L_n = \frac{L_{n-1}}{3} = \frac{L_{n-2}}{3^2} = \frac{L_{n-3}}{3^3} = \ldots = \frac{L_0}{3^n} = \frac{s}{3^n}.
@@ -58,7 +49,7 @@ Figure~\ref{koch} shows the first iterations in the construction.
   \begin{displaymath}
     N_nL_n = 3 \cdot 4^n\frac{s}{3^n} = 3s\frac{4^n}{3^n} = 3s\left(\frac{4}{3}\right)^n.
   \end{displaymath}
-  Since 4$/$3 $>$ 1, it follows that $N_nL_n$ tends to infinity as $n \to \infty$, which means the Koch snowflake indeed has infinite length.
+  Since $4/3 > 1$, it follows that $N_nL_n$ tends to infinity as $n \to \infty$, which means the Koch snowflake indeed has infinite length.
 \end{proof}
 
 \begin{theorem}
