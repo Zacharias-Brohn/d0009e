@@ -22,6 +22,9 @@ def bounce2(n):
         print(i)
 
 def tvarsumman(n):
+    if n == float:
+        print("needs int value")
+        return
     if n == 0:
         return 0
     else:
@@ -40,4 +43,3 @@ def tvarsumman2(n):
         n //= 10
     
     return total
-import d0009e_lab2_sumTest.py
