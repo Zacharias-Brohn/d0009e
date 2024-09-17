@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1726576843.67139 "/Users/zacharias/d0009e/LaTeX/Moment D2/Reportskelett/2-reportskelett.tex" "2-reportskelett.pdf" "2-reportskelett" 1726576846.36396 0
-  "/Users/zacharias/d0009e/LaTeX/Moment D2/Reportskelett/2-reportskelett.tex" 1726576843.36706 6455 32bd104d81f7bc85408d9cc47a5ad803 ""
+["pdflatex"] 1726606399.36376 "/Users/zacharias/d0009e/LaTeX/Moment D2/Reportskelett/2-reportskelett.tex" "2-reportskelett.pdf" "2-reportskelett" 1726606401.69657 2
+  "/Users/zacharias/d0009e/LaTeX/Moment D2/Reportskelett/2-reportskelett.tex" 1726606398.83204 9313 c19528c59beaae3d7477f2ff0c893677 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1136768653 1536 73da8e8f1d2a4c957d51ca133585586b ""
@@ -168,6 +168,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/footmisc/footmisc.sty" 1688586963 21399 e9fa1517a82f349507e998594ef20b82 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/gensymb/gensymb.sty" 1666126245 4629 bbc3d88bc1fe1146ecbefa95c41cab26 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -204,8 +205,8 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1726225317.44073 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1726225131 8221410 e51af6b920672e8828ce638076a8979b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2-reportskelett.aux" 1726576846.02201 1582 6b4a77540e87cb2b6c8341e7d669e342 "pdflatex"
-  "2-reportskelett.tex" 1726576843.36706 6455 32bd104d81f7bc85408d9cc47a5ad803 ""
+  "2-reportskelett.aux" 1726606401.47478 1651 911780e65e59dbd359fc8cb96bd12efa "pdflatex"
+  "2-reportskelett.tex" 1726606398.83204 9313 c19528c59beaae3d7477f2ff0c893677 ""
   (generated)
   "2-reportskelett.aux"
   "2-reportskelett.log"

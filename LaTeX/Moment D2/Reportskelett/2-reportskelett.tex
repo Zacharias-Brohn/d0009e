@@ -2,7 +2,7 @@
 \usepackage[swedish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage{pgfplots, scrextend}
+\usepackage{pgfplots, scrextend, gensymb}
 \pgfplotsset{compat=1.18}
 % Ändra INTE nästa rad (säger var texten ska typsättas)
 \usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
@@ -85,7 +85,7 @@ Rapporten kommer lösa och beskriva uppgifter kring en skidbacke som har fallhö
 \end{tikzpicture}\newline
 Grafen är ritad med ett samband mellan y (höjden i km.) och x (längden i km.) som kan srivas som:\\
 $y = 0,5e^{-x^2}$ $\>$ $\>$ där $\>$ $\>$ $0 \leq x \leq 2,5$\\
-\section{En skidbackes lutning}
+\section{The angle of a slope}
 \label{sec:uppg1}
   First we solve:\\
   \begin{addmargin}[1em]{1em}
@@ -128,14 +128,81 @@ $y = 0,5e^{-x^2}$ $\>$ $\>$ där $\>$ $\>$ $0 \leq x \leq 2,5$\\
     \begin{split}
       y'(0,8) & = -0,8 \cdot e^{-\left(0,8\right)^2} \\
               & = -0,8 \cdot e^{-\left(0,64\right)} \\
-              & = -0,8 \cdot 0,5272 = -0,4218
+              & \approx -0,8 \cdot 0,5272 \approx -0,42
     \end{split}
   \end{equation}
-  The slope of the tangent line at $x = 0,8$ is approximately $-0,4218$.
-  
-\section{Nästa (del-) uppgift}
+  So the answer is that the slope of the tangent line at $x = 0,8$ is approximately $-0,42$.
+\section{Second derivative}
 \label{sec:uppg2}
-
+Here our task is:\\
+\begin{addmargin}[1em]{1em}
+  Find an equation where the angle is the steepest using this function:
+  \begin{displaymath}
+    y = 0,5e^{-ax^2}
+  \end{displaymath}
+\end{addmargin}
+Where $a$ is a constant and $x$ is in the range $0 \leq x \leq 2,5$. The second derivative will tell us how the slope of the curve is changing and will let us analyze the concavity of the function. But first, we need to calculate the first derivative $y'$.
+\subsection{First Derivative}
+Just like earlier we will make use of the \textbf{chain rule} for this, so, again:
+\begin{itemize}
+  \item The outer function is $f(u) = 0.5e^u$, where $u = -ax^2$
+  \item The inner function is $g(x) = -ax^2$.
+\end{itemize}
+The outer function's derivative with respect to $u$ is, once again, $e^u$, so we have:
+\begin{equation}
+  \frac{dy}{du} = 0,5e^u
+\end{equation}
+And the inner function's derivative with respect to $x$ using the power rule, we get:
+\begin{equation}
+  \begin{split}
+    \frac{du}{dx} &= \frac{d}{dx}\left(-ax^2\right) \\
+                  &= -2ax
+  \end{split}
+\end{equation}
+Now we can apply the chain rule:
+\begin{equation}
+  \begin{split}
+    \frac{dy}{dx} &= \frac{dy}{du} \cdot \frac{du}{dx} \\
+                  &= 0,5e^{-ax^2} \cdot \left(-2ax\right)
+  \end{split}
+\end{equation}
+Now that we have the first derivative, we can simplify it:
+\begin{displaymath}
+  \begin{split}
+    y'  &= 0,5e^{-ax^2} \cdot \left(-2ax\right) \\
+        &= -ax \cdot e^{-ax^2}
+  \end{split}
+\end{displaymath}
+\subsection{Finding the Second Derivative}
+Finally we can work toward finding the Second Derivative $\frac{d^2y}{dx^2}$. To do this we can use the \textbf{product rule} and, once again, the \textbf{chain rule}.
+\subsection*{The Product Rule}
+The product rule states:
+\begin{displaymath}
+  \frac{d}{dx}\left(u\left(x\right) \cdot v\left(x\right)\right)
+  = u'\left(x\right) \cdot v\left(x\right) + u\left(x\right) \cdot v'\left(x\right)
+\end{displaymath}
+And in our case:
+\begin{itemize}
+  \item $u\left(x\right) = -ax$
+  \item $v\left(x\right) = e^{-ax^2}$
+\end{itemize}
+Of which we need to find the derivative for both:
+\begin{equation}
+  \begin{split}
+    u'\left(x\right)  &= -as \\
+    v'\left(x\right)  &= e^{-ax^2} \cdot \left(-2ax\right) \\
+                      &= -2axe^{-ax^2}
+  \end{split}
+\end{equation}
+Now we need to apply the product rule:
+\begin{equation}
+  \begin{split}
+    \frac{d^2y}{dx^2} &= \frac{d}{dx}\left(u\left(x\right) \cdot 
+                         v\left(x\right)\right) \\
+                      &= u'\left(x\right) \cdot v\left(x\right) + u\left(x\right) \cdot v'\left(x\right) \\
+                      &= \left(-a\right) \cdot e^{-ax2} + \left(-ax\right) \cdot \left(-2axe^{-ax^2\right)
+  \end{split}
+\end{equation}
 \section{Och ännu nästa (del-) uppgift...}
 \label{sec:uppgN}
 
