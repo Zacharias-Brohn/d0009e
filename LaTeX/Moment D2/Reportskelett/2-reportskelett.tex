@@ -51,8 +51,7 @@
 \maketitle
 
 \begin{abstract}
-  Denna rapport handlar om LoremIpsum
-  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsumDenna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsumDenna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsumDenna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum  Denna rapport handlar om LoremIpsum
+  I denna rapport ska jag beskriva och förklara uppgifter angående en given funktion på en kurva 
 \end{abstract}
 \section{Introduktion}
 \label{sec:introduktion}
@@ -88,30 +87,52 @@ Grafen är ritad med ett samband mellan y (höjden i km.) och x (längden i km.)
 $y = 0,5e^{-x^2}$ $\>$ $\>$ där $\>$ $\>$ $0 \leq x \leq 2,5$\\
 \section{En skidbackes lutning}
 \label{sec:uppg1}
-  Först löser vi uppgiften:\\
+  First we solve:\\
   \begin{addmargin}[1em]{1em}
-    Bestäm backens lutning för $x = 0,8$.\\
+    Determine the angle at which the curve of the function is inclined at the point $x=0,8$.\\
   \end{addmargin}
-  För att räkna fram lutningen måste vi lista ut och använda funktionens derivata $f'(x)$. Genom att använda kedjeregeln $(f(g(x)) = f'(g(x))g'(x))$ så får vi
+  To do this, we first need to calculate the derivative $\left(\frac{dy}{dx}\right)$ of the function, which will give us the slope of the tangent line at that point. From the slope, we can then calculate the angle using the arctangent function. Because the function involves an exponential expression, we will use the \textbf{chain rule}:
+  \subsection{Splitting the function}
+  The function $y=0,5e^{-x^2}$ can be viewed as a composition of two functions:
+  \begin{itemize}
+    \item The outer function $f(u)=0,5e^u$, where $u=-x^2$.
+    \item The inner function $g(x)=-x^2$.
+  \end{itemize}
+  According to the chain rule, the derivative of the composite function is:
+  \begin{displaymath}
+    \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
+  \end{displaymath}
+  \subsection{Step~1: Derivative of the Outer Function}
+  First, we differentiate the outer function $y = 0,5e^u$ with respect to $u$. The derivative of $e^u$ with respect to $u$ is simply $e^u$, and since there is a constant 0,5 in front, we have:
   \begin{equation}
-    \frac{d}{dx}\left(e^{-x^2}\right) = \frac{d}{dx}e^4\frac{du}{dx},
+    \frac{dy}{du} = 0,5e^u
   \end{equation}
-  där
-  \begin{displaymath}
-    u = -x^2
-  \end{displaymath}
-  och
-  \begin{displaymath}
-    \frac{d}{du}\left(e^4\right) = e^u
-  \end{displaymath}
-  och där
-  \begin{displaymath}
-    \frac{d}{dx}\left(-x^2\right) = -2x \text{ ty,} \frac{d}{dx} = n \cdot x^{n-1}.
-  \end{displaymath}
-  vilket ger oss
-  \begin{displaymath}
-    -0,5\left(\frac{2x}{e^{x^2}}\right) = \frac{-x}{e^{x^2}} = -x \cdot e^{-x^2}.
-  \end{displaymath}
+  \subsection{Step~2: Derivative of the Inner Function}
+  Next, we differentiate the inner function $u = -x^2$ with respect to $x$ using the basic power rule differentiation:
+  \begin{equation}
+    \frac{du}{dx} = \frac{d}{dx}\left(-x^2\right) = -2x
+  \end{equation}
+  \subsection{Step~3: Applying the Chain Rule}
+  Now, we apply the chain rule by multiplying the results from Step~1 and Step~2:
+  \begin{equation}
+    \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = 0,5e^{-x^2} \cdot \left(-2x\right)
+  \end{equation}
+  And by simplifying this expression we get:
+  \begin{equation}
+    \frac{dy}{dx} = -x \cdot e^{-x^2}
+  \end{equation}
+  Thus we have the derivative of $y$.
+  \subsection{Finding the Slope at $x = 0,8$}
+  Now that we have the general expression for the derivative, we can calculate the slope of the curve at the point $x$. Substituting $x = 0,8$ into the derivative as well as simplifying:
+  \begin{equation}
+    \begin{split}
+      y'(0,8) & = -0,8 \cdot e^{-\left(0,8\right)^2} \\
+              & = -0,8 \cdot e^{-\left(0,64\right)} \\
+              & = -0,8 \cdot 0,5272 = -0,4218
+    \end{split}
+  \end{equation}
+  The slope of the tangent line at $x = 0,8$ is approximately $-0,4218$.
+  
 \section{Nästa (del-) uppgift}
 \label{sec:uppg2}
 
