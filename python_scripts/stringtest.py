@@ -1,6 +1,6 @@
 import string
 def isDigit(ch):
-    return ch in string.digits
+    return ch in string.punctuation
 
-s=isDigit(4)
+s=isDigit(".")
 print(s)
