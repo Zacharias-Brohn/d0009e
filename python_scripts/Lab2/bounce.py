@@ -20,7 +20,6 @@ def bounce2(n):
     # Loop räknar upp från 0 till n
     for i in range(1, n + 1):
         print(i)
-import d0009e_lab2_bounceTest
 
 def tvarsumman(n):
     if n < 0:
@@ -45,4 +44,3 @@ def tvarsumman2(n):
         n //= 10
     
     return total
-import d0009e_lab2_sumTest
