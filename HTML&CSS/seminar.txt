@@ -1,0 +1,76 @@
+Uniform Resource Locator (URL)
+Tim Berners-Lee
+    89-90, webben skapades.
+
+DNS Domän Namn Uppslagning/System (Domain Name System)
+    Adressuppslagningsfunktion
+    Varje dator tilldelas en namnserver som sköter uppslagningar
+    DNS översätter fram och tillbaka mellan: 
+    Domän www.domän.se 
+    IP-Nummer 130.240.43.25, om IPv4
+
+ICANN (Internet Corporation for Assigned Names and Numbers)
+    Ansvarar för att DNS, adresser och internets grundläggande funktionalitet
+    DNSSEC, säker uppslagning (2010)
+        -Sverige har det redan 2005. Beror på Anne-Marie Eklund-Löwinder.
+        -Anne-Marie var en "nyckelbärare" för DNSSEC.
+            -De (fysiska) nycklarna från bärare behövs för att generera DNSSEC-kryptonycklar.
+        ICANN key ceremony
+
+Webbsidor
+    HTML HyperText Markup Language
+        -Språket HTML använder HTML-tags som bildar element.
+        -Varje Tag har unikt namn <namn>text</namn>
+        -Taggar har start tag <tag> och slut tag </tag>, tillsammans bildar de element
+        -Start och sluttag behöver inte vara på samma rad, men liksom LaTeX indenterar man ofta för att öka läslighet.
+        -<strong>Märker ut någonting viktigt, många webbläsare gör denna tag till fet text.</strong>
+        -LaTeX och HTML är båda sidbeskrivningsspråk.
+        -HTML är mycket enklare än LaTeX.
+        -Exempel:
+            <html> 
+                <head>
+                    <title>Sidtitel</title>
+                </head>
+                <body>
+                    ...då kom en <strong>stor och fet</strong> ko som...
+                </body>
+            </html>
+        -BODY element är webbsidans innehåll.
+        -Skillnad från LaTeX:
+            -Taggar kan skrivas med stora eller små bokstäver
+            -Svagt stöd för matematisk text
+            -Ingen automatisk numrering
+            -Länkar är grundläggande, svagt stöd för det i LaTeX.
+            -Stöd för interaktion med den som surfar.
+            -Blankrad har ingen betydelse i HTML!
+                -Använd <p>... text ...</p> för nytt stycke.
+            -Vanliga taggar;
+                -Metadetaljer: <html></html>, <head></head>, <title></title>
+                -Avsnitt: <h1></h1>
+                -Sammanhängande del: <div></div>
+            -Kan ha argument som varierar taggens funktion.
+            -Argument radas upp efter starttaggens namn:
+                -<a href="url.site.web">...</a>
+            -De flesta starttaggar kan varierar med argument, men alla har inte samma argument.
+            -Många starttaggar har tyvärr även argument som påverkar utseende.
+    CSS Cascading Style Sheets
+        -Språk för stilmallar.
+        -Tre sätt att skriva stilmall:
+            -Skriva style i HTML istället för CSS (dåligt!)
+            -Med CSS-regelmängder, som påverkar allt av samma sort eller allt märkt på samma sätt, antingen:
+                -<style></style> :| eller
+                -Externt en separat fil med HTML-element <link></link> :)!
+        -CSS Regelmängd
+            -Selektor och deklaration
+                -Selektor är en HTML-tag eller klass
+                -Deklaration är egenskap och värde (stil)
+            -Webbdesign
+                -Normalt skriver man inte HTML-manus direkt i en texteditor.
+                -Men vi ska skriva manus själva, för vårt mål är att lära oss språket från grunden, inte webbdesign.
+                -Webbsidor kan programmeras med t.ex. JavaScript.
+                    -Vi ska inte lära oss JS.
+            HTML-kursen
+                -https://www.w3schools.com/html
+            CSS-kursen
+                -https://www.w3schools.com/css
+            
