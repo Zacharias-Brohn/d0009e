@@ -91,3 +91,21 @@ numberlist = [1,8,4,2]
 print(f"\n{numberlist}")
 deleteHead(numberlist)
 print(numberlist)   # But because of aliasing, it still removes a list item
+
+# Inefficient
+def fib(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return fib(n-1)+fib(n-2)
+
+# Efficient
+def fibonacci(n):
+    results = {0:1, 1:1}
+    return fibRec(results,n)
+
+def fibRed(previous,n):
+    print("Value:",n)
+    if not (n in previous):
+        previous[n] = fibRec(previous, n-1)
+    return previous[n]
