@@ -104,8 +104,8 @@ def fibonacci(n):
     results = {0:1, 1:1}
     return fibRec(results,n)
 
-def fibRed(previous,n):
+def fibRec(previous,n):
     print("Value:",n)
     if not (n in previous):
-        previous[n] = fibRec(previous, n-1)
+        previous[n] = fibRec(previous, n-1) + fibRec(previous, n-2)
     return previous[n]
