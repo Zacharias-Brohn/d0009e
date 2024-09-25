@@ -64,3 +64,10 @@ def filterFile(oldFile,newFile):
     f1.close()
     f2.close()
 
+def report(wages,file):
+    f = open(file,"w")
+    people = list(wages.keys())
+    people.sort()
+    for x in people:
+        f.write("%-20s %12.2f\n" % (x, wages[x]))
+    f.close()
