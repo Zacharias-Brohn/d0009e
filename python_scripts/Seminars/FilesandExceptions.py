@@ -41,3 +41,26 @@ def copyFile(oFile, nFile):
     f2.close()
 
 copyFile("testfile", "copiedfile")
+
+f = open("readline","w")
+f.write("Row1\nRo")
+f.write("w2\nRow3")
+f.close()
+
+f = open("readline","r")
+s = f.readlines()
+print(s[:2])
+
+def filterFile(oldFile,newFile):
+    f1 = open(oldFile,"r")
+    f2 = open(newfile,"w")
+    while True:
+        text = f1.readline()
+        if text == "":
+            break
+        if text[0] == '#':
+            continue
+        f2.write(text)
+    f1.close()
+    f2.close()
+
