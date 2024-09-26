@@ -5,11 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O Great Hammurabi!</title>
-  <link rel="stylesheet" type="text/css" href="hammurabi.css">
+  <link rel="stylesheet" type="text/css" href="hammurabi1.css">
   <script type="text/javascript" src="hammurabi.js" defer></script>
 </head>
 
 <body onload="gameStart();">
+  <ul id="navbar">
+    <li><a href="hammurabi1.html">Hem</a></li>
+    <li><a href="hammurabi-info.html">Om Spelet</a></li>
+    <li><a href="hammurabi-tips.html">Speltips</a></li>
+    <li style="float:right"><a href="hammurabi-kung.html">Historia</a></li>
+  </ul>
   <header>
     <h1>O Great Hammurabi!</h1>
   </header>
@@ -18,14 +24,14 @@
     <section id="status">
       <h2 id="year">TEXT-SOM-BYTS-UT-AV-JS-FILEN</h2>
       
-      <h3>Population Stats</h3>
+      <h3>Population</h3>
       <ul id="people">
         <li id="starved">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
         <li id="newcomers">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
         <li id="population">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
       </ul>
 
-      <h3>Economic Stats</h3>
+      <h3>Statistik</h3>
       <ul id="economy">
         <li id="acres">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
         <li id="bushels">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
@@ -37,56 +43,163 @@
 
     <section id="controls">
       <form aria-label="Hammurabi Game Controls">
-        
-
         <fieldset class="fieldset">
-          <legend>Acres to Buy/Sell</legend>
-          <label for="sliderAcrestosellbuy" class="visually-hidden">Select acres</label>
-          <input type="button" value="-" id="minusbuttonAcrestosellbuy" 
-                 aria-label="Decrease acres" onclick="onChangeAcres('minusbuttonAcrestosellbuy');">
+          <boxh1>Tunnland som ska säljas/köpas</boxh1>
+          <label for="sliderAcrestosellbuy" class="visually-hidden"></label>
+          <div class="button-container">
+            <button type="button" id="minus100buttonAcrestosellbuy" 
+              aria-label="Decrease acres" onclick="onChangeAcres('minus100buttonAcrestosellbuy');">
+              -100
+            </button>
+            <button type="button" id="minus50buttonAcrestosellbuy" 
+              aria-label="Decrease acres" onclick="onChangeAcres('minus50buttonAcrestosellbuy');">
+              -50
+            </button>
+            <button type="button" id="minus10buttonAcrestosellbuy" 
+              aria-label="Decrease acres" onclick="onChangeAcres('minus10buttonAcrestosellbuy');">
+              -10
+            </button>
+            <button type="button" id="minus5buttonAcrestosellbuy" 
+              aria-label="Decrease acres" onclick="onChangeAcres('minus5buttonAcrestosellbuy');">
+              -5
+            </button>
+            <button type="button" id="minusbuttonAcrestosellbuy" 
+              aria-label="Decrease acres" onclick="onChangeAcres('minusbuttonAcrestosellbuy');">
+              -1
+            </button>
+            <button type="button" value="+1" id="plusbuttonAcrestosellbuy" 
+              aria-label="Increase acres" onclick="onChangeAcres('plusbuttonAcrestosellbuy');">
+              +1
+            </button>
+            <button type="button" value="+5" id="minus5buttonAcrestosellbuy" 
+              aria-label="Increase acres" onclick="onChangeAcres('plus5buttonAcrestosellbuy');">
+              +5
+            </button>
+            <button type="button" value="+10" id="plus10buttonAcrestosellbuy" 
+              aria-label="Increase acres" onclick="onChangeAcres('plus10buttonAcrestosellbuy');">
+              +10
+            </button>
+            <button type="button" value="+50" id="plus50buttonAcrestosellbuy" 
+              aria-label="Increase acres" onclick="onChangeAcres('plus50buttonAcrestosellbuy');">
+              +50
+            </button>
+            <button type="button" id="plus100buttonAcrestosellbuy" 
+            aria-label="Increase acres" onclick="onChangeAcres('plus100buttonAcrestosellbuy');">
+              +100
+            </button>
+          </div>
           <input type="range" id="sliderAcrestosellbuy" 
-                 aria-valuemin="0" aria-valuemax="100" onchange="onChangeAcres('sliderAcrestosellbuy');">
-          <input type="button" value="+" id="plusbuttonAcrestosellbuy" 
-                 aria-label="Increase acres" onclick="onChangeAcres('plusbuttonAcrestosellbuy');">
+            aria-valuemin="0" aria-valuemax="100" onchange="onChangeAcres('sliderAcrestosellbuy');">
           <span id="outputAcrestosellbuy" aria-live="polite"></span>
         </fieldset>
 
 
         <fieldset class="fieldset">
-          <legend>Food for People</legend>
-          <label for="sliderFeedpeople" class="visually-hidden">Select food amount</label>
-          <input type="button" value="-" id="minusbuttonFeedpeople" 
-                 aria-label="Decrease food" onclick="onChangeFeeding('minusbuttonFeedpeople');">
+          <boxh1>Mat till folket</boxh1>
+          <div class="button-container">
+            <button type="button" id="minus100buttonFeedpeople" 
+              aria-label="Decrease food" onclick="onChangeFeeding('minus100buttonFeedpeople');">
+              -100
+            </button>
+            <button type="button" id="minus50buttonFeedpeople" 
+              aria-label="Decrease food" onclick="onChangeFeeding('minus50buttonFeedpeople');">
+              -50
+            </button>
+            <button type="button" id="minus10buttonFeedpeople" 
+              aria-label="Decrease food" onclick="onChangeFeeding('minus10buttonFeedpeople');">
+              -10
+            </button>
+            <button type="button" id="minus5buttonFeedpeople" 
+              aria-label="Decrease food" onclick="onChangeFeeding('minus5buttonFeedpeople');">
+              -5
+            </button>
+            <button type="button" id="minusbuttonFeedpeople" 
+              aria-label="Decrease food" onclick="onChangeFeeding('minusbuttonFeedpeople');">
+              -1
+            </button>
+            <button type="button" id="plusbuttonFeedpeople" 
+              aria-label="Increase food" onclick="onChangeFeeding('plusbuttonFeedpeople');">
+              +1
+            </button>
+            <button type="button" id="minus5buttonFeedpeople" 
+              aria-label="Increase food" onclick="onChangeFeeding('plus5buttonFeedpeople');">
+              +5
+            </button>
+            <button type="button" id="plus10buttonFeedpeople" 
+              aria-label="Increase food" onclick="onChangeFeeding('plus10buttonFeedpeople');">
+              +10
+            </button>
+            <button type="button" id="plus50buttonFeedpeople" 
+              aria-label="Increase food" onclick="onChangeFeeding('plus50buttonFeedpeople');">
+              +50
+            </button>
+            <button type="button" id="plus100buttonFeedpeople" 
+              aria-label="Increase food" onclick="onChangeFeeding('plus100buttonFeedpeople');">
+              +100
+            </button>
+          </div>
           <input type="range" id="sliderFeedpeople" 
-                 aria-valuemin="0" aria-valuemax="100" onchange="onChangeFeeding('sliderFeedpeople');">
-          <input type="button" value="+" id="plusbuttonFeedpeople" 
-                 aria-label="Increase food" onclick="onChangeFeeding('plusbuttonFeedpeople');">
+            aria-valuemin="0" aria-valuemax="100" onchange="onChangeFeeding('sliderFeedpeople');">
           <span id="outputFeedpeople" aria-live="polite"></span>
         </fieldset>
 
 
         <fieldset class="fieldset">
-          <legend>Plant Seeds</legend>
-          <label for="sliderPlantwithseed" class="visually-hidden">Select seed amount</label>
-          <input type="button" value="-" id="minusbuttonPlantwithseed" 
-                 aria-label="Decrease seed" onclick="onChangePlanting('minusbuttonPlantwithseed');">
+          <boxh1>Så med utsäde</boxh1>
+          <div class="button-container">
+            <button type="button" id="minus100buttonPlantwithseed" 
+              aria-label="Remove plant seeds" onclick="onChangePlanting('minus100buttonPlantwithseed');">
+              -100
+            </button>
+            <button type="button" id="minus50buttonPlantwithseed" 
+              aria-label="Remove plant seeds" onclick="onChangePlanting('minus50buttonPlantwithseed');">
+              -50
+            </button>
+            <button type="button" id="minus10buttonPlantwithseed" 
+              aria-label="Remove plant seeds" onclick="onChangePlanting('minus10buttonPlantwithseed');">
+              -10
+            </button>
+            <button type="button" id="minus5buttonPlantwithseed" 
+              aria-label="Remove plant seeds" onclick="onChangePlanting('minus5buttonPlantwithseed');">
+              -5
+            </button>
+            <button type="button" id="minusbuttonPlantwithseed" 
+              aria-label="Remove plant seeds" onclick="onChangePlanting('minusbuttonPlantwithseed');">
+              -1
+            </button>
+            <button type="button" id="plusbuttonPlantwithseed" 
+              aria-label="Plant seeds" onclick="onChangePlanting('plusbuttonPlantwithseed');">
+              +1
+            </button>
+            <button type="button" id="minus5buttonPlantwithseed" 
+              aria-label="Plant seeds" onclick="onChangePlanting('plus5buttonPlantwithseed');">
+              +5
+            </button>
+            <button type="button" id="plus10buttonPlantwithseed" 
+              aria-label="Plant seeds" onclick="onChangePlanting('plus10buttonPlantwithseed');">
+              +10
+            </button>
+            <button type="button" id="plus50buttonPlantwithseed" 
+              aria-label="Plant seeds" onclick="onChangePlanting('plus50buttonPlantwithseed');">
+              +50
+            </button>
+            <button type="button" id="plus100buttonPlantwithseed" 
+              aria-label="Plant seeds" onclick="onChangePlanting('plus100buttonPlantwithseed');">
+              +100
+            </button>
+          </div>
           <input type="range" id="sliderPlantwithseed" 
                  aria-valuemin="0" aria-valuemax="100" onchange="onChangePlanting('sliderPlantwithseed');">
-          <input type="button" value="+" id="plusbuttonPlantwithseed" 
-                 aria-label="Increase seed" onclick="onChangePlanting('plusbuttonPlantwithseed');">
           <span id="outputPlantwithseed" aria-live="polite"></span>
         </fieldset>
 
 
         <div id="actions">
           <button type="button" onclick="gameStart();" aria-label="Restart the game">
-            Restart
+            Börja om
           </button>
           <button type="button" id="emph" onclick="finishTurn();" aria-label="Submit your orders">
             Detta är min order!
-          </button>
-          <button type="button" onclick="showHelp();" aria-label="Help with the game">
-            Help
           </button>
         </div>
       </form>

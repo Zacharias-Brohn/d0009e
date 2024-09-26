@@ -178,22 +178,6 @@ function onChangeAcres(elementId) {
 		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) - 1;
 	} else if (elementId === "plusbuttonAcrestosellbuy") {
 		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) + 1;
-	} else if (elementId === "minus5buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) - 5;
-	} else if (elementId === "plus5buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) + 5;
-	} else if (elementId === "minus10buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) - 10;
-	} else if (elementId === "plus10buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) + 10;
-	} else if (elementId === "minus50buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) - 50;
-	} else if (elementId === "plus50buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) + 50;
-	} else if (elementId === "minus100buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) - 100;
-	} else if (elementId === "plus100buttonAcrestosellbuy") {
-		getSlider("sliderAcrestosellbuy").value = parseInt(getSlider("sliderAcrestosellbuy").value) + 100;
 	}
 	updateSliderValueOutput("sliderAcrestosellbuy", "outputAcrestosellbuy");
 	updateInternalAcres();
@@ -214,22 +198,6 @@ function onChangeFeeding(elementId) {
 		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) - 1;
 	} else if (elementId === "plusbuttonFeedpeople") {
 		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) + 1;
-	} else if (elementId === "minus5buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) - 5;
-	} else if (elementId === "plus5buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) + 5;
-	} else if (elementId === "minus10buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) - 10;
-	} else if (elementId === "plus10buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) + 10;
-	} else if (elementId === "minus50buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) - 50;
-	} else if (elementId === "plus50buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) + 50;
-	} else if (elementId === "minus100buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) - 100;
-	} else if (elementId === "plus100buttonFeedpeople") {
-		getSlider("sliderFeedpeople").value = parseInt(getSlider("sliderFeedpeople").value) + 100;
 	}
 	updateSliderValueOutput("sliderFeedpeople", "outputFeedpeople");
 	updateInternalBushels();
@@ -249,22 +217,6 @@ function onChangePlanting(elementId) {
 		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) - 1;
 	} else if (elementId === "plusbuttonPlantwithseed") {
 		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) + 1;
-	} else if (elementId === "minus5buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) - 5;
-	} else if (elementId === "plus5buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) + 5;
-	} else if (elementId === "minus10buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) - 10;
-	} else if (elementId === "plus10buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) + 10;
-	} else if (elementId === "minus50buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) - 50;
-	} else if (elementId === "plus50buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) + 50;
-	} else if (elementId === "minus100buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) - 100;
-	} else if (elementId === "plus100buttonPlantwithseed") {
-		getSlider("sliderPlantwithseed").value = parseInt(getSlider("sliderPlantwithseed").value) + 100;
 	}
 	updateSliderValueOutput("sliderPlantwithseed", "outputPlantwithseed");
 	updateInternalBushels();
