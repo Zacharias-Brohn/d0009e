@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Great Hammurabi!</title>
+  <link rel="stylesheet" type="text/css" href="hammurabi.css">
+  <script type="text/javascript" src="hammurabi.js" defer></script>
+</head>
+
+<body onload="gameStart();">
+  <header>
+    <h1>O Great Hammurabi!</h1>
+  </header>
+
+  <main>
+    <section id="status">
+      <h2 id="year">TEXT-SOM-BYTS-UT-AV-JS-FILEN</h2>
+      
+      <h3>Population Stats</h3>
+      <ul id="people">
+        <li id="starved">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+        <li id="newcomers">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+        <li id="population">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+      </ul>
+
+      <h3>Economic Stats</h3>
+      <ul id="economy">
+        <li id="acres">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+        <li id="bushels">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+        <li id="harvest">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+        <li id="rats">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+        <li id="price">TEXT-SOM-BYTS-UT-AV-JS-FILEN</li>
+      </ul>
+    </section>
+
+    <section id="controls">
+      <form aria-label="Hammurabi Game Controls">
+        
+
+        <fieldset class="fieldset">
+          <legend>Acres to Buy/Sell</legend>
+          <label for="sliderAcrestosellbuy" class="visually-hidden">Select acres</label>
+          <input type="button" value="-" id="minusbuttonAcrestosellbuy" 
+                 aria-label="Decrease acres" onclick="onChangeAcres('minusbuttonAcrestosellbuy');">
+          <input type="range" id="sliderAcrestosellbuy" 
+                 aria-valuemin="0" aria-valuemax="100" onchange="onChangeAcres('sliderAcrestosellbuy');">
+          <input type="button" value="+" id="plusbuttonAcrestosellbuy" 
+                 aria-label="Increase acres" onclick="onChangeAcres('plusbuttonAcrestosellbuy');">
+          <span id="outputAcrestosellbuy" aria-live="polite"></span>
+        </fieldset>
+
+
+        <fieldset class="fieldset">
+          <legend>Food for People</legend>
+          <label for="sliderFeedpeople" class="visually-hidden">Select food amount</label>
+          <input type="button" value="-" id="minusbuttonFeedpeople" 
+                 aria-label="Decrease food" onclick="onChangeFeeding('minusbuttonFeedpeople');">
+          <input type="range" id="sliderFeedpeople" 
+                 aria-valuemin="0" aria-valuemax="100" onchange="onChangeFeeding('sliderFeedpeople');">
+          <input type="button" value="+" id="plusbuttonFeedpeople" 
+                 aria-label="Increase food" onclick="onChangeFeeding('plusbuttonFeedpeople');">
+          <span id="outputFeedpeople" aria-live="polite"></span>
+        </fieldset>
+
+
+        <fieldset class="fieldset">
+          <legend>Plant Seeds</legend>
+          <label for="sliderPlantwithseed" class="visually-hidden">Select seed amount</label>
+          <input type="button" value="-" id="minusbuttonPlantwithseed" 
+                 aria-label="Decrease seed" onclick="onChangePlanting('minusbuttonPlantwithseed');">
+          <input type="range" id="sliderPlantwithseed" 
+                 aria-valuemin="0" aria-valuemax="100" onchange="onChangePlanting('sliderPlantwithseed');">
+          <input type="button" value="+" id="plusbuttonPlantwithseed" 
+                 aria-label="Increase seed" onclick="onChangePlanting('plusbuttonPlantwithseed');">
+          <span id="outputPlantwithseed" aria-live="polite"></span>
+        </fieldset>
+
+
+        <div id="actions">
+          <button type="button" onclick="gameStart();" aria-label="Restart the game">
+            Restart
+          </button>
+          <button type="button" id="emph" onclick="finishTurn();" aria-label="Submit your orders">
+            Detta är min order!
+          </button>
+          <button type="button" onclick="showHelp();" aria-label="Help with the game">
+            Help
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+  
+</body>
+
+</html>
