@@ -14,6 +14,10 @@ body {
     color: #ecf0f1;
   }
 
+  a {
+    color: rgb(184, 236, 255) !important;
+  }
+
   #navbar {
     background-color: #1a252f !important;
   }
@@ -46,7 +50,8 @@ body {
 
   #economy li {
     background-color: #854a15 !important;
-  }
+    color: white !important;
+}
 
   .fieldset {
     background-color: #34495e !important;
@@ -74,6 +79,7 @@ body {
   }
 }
 
+
 #navbar {
   list-style-type: none;
   margin: 0;
@@ -89,7 +95,7 @@ body {
   float: left;
 }
 
-#navbar li a {
+#navbar li button {
   display: block;
   color: white;
   padding: 8px;
@@ -97,8 +103,12 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#navbar li a:hover {
+#navbar li button:hover {
   background-color: #2980b9
+}
+
+a {
+  color: #2c3e50;
 }
 
 h1 {
@@ -128,10 +138,10 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
   margin: 20px auto;
   padding: 15px;
-  max-width: 1200px;
+  max-width: 1100px;
   width: calc(100% - 100px);
   background-color: #ecf0f1;
   border-radius: 8px;
@@ -143,7 +153,7 @@ ol {
 }
 
 ol li {
-  padding: 10px 0;
+  padding: 10px 15px 10px 0;
 }
 
 p1 {
@@ -170,6 +180,8 @@ boxh1 {
   border-radius: 8px;
   border: 1px solid #bdc3c7;
   list-style-type: none;
+  max-width: 600px;
+  width: calc(100% - 100px);
 }
 
 #people li {
@@ -189,13 +201,15 @@ boxh1 {
   border-radius: 8px;
   border: 1px solid #f39c12;
   list-style-type: none;
+  max-width: 600px;
+  width: calc(100% - 100px);
 }
 
 #economy li {
   padding: 10px;
   margin-bottom: 5px;
   background-color: #f39c12;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 5px;
   font-size: 1em;
 }
@@ -210,6 +224,7 @@ boxh1 {
   margin: 20px auto;
   padding: 15px;
   max-width: 600px;
+  width: calc(100% - 100px);
   background-color: #ecf0f1;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -250,10 +265,10 @@ button:hover {
   margin-right: 15px;
 }
 
-/* Responsive Media Queries */
+/* Responsive Media Queries 
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 30px 0;
   }
 
   h1 {
@@ -274,7 +289,7 @@ button:hover {
   }
 
   .fieldset {
-    max-width: 100%;
+    max-width: 90%;
     padding: 15px;
   }
 
