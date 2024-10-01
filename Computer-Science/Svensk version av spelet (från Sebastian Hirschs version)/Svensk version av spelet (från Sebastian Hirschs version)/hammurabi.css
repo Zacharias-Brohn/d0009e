@@ -47,6 +47,7 @@ iframe {
 
 #navbar li {
   float: left;
+  position: relative;
 }
 
 button {
@@ -64,12 +65,11 @@ button:hover {
 }
 
 .dropdown-content {
-  display: none; /* Hidden by default */
-
-}
-
-.show {
-  display: block !important;
+  display: none;
+  visibility: hidden; /* Add this to control visibility */
+  opacity: 0; /* Add this to control opacity */
+  transition: opacity 0.3s ease;
+  z-index: 9999;
   position: absolute;
   top: 50px;
   left: 0;
@@ -78,4 +78,10 @@ button:hover {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   padding: 12px;
   border: 1px solid #ccc;
+}
+
+.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
