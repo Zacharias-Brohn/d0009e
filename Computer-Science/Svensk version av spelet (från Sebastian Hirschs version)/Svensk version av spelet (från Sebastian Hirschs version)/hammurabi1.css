@@ -1,3 +1,4 @@
+/* Zacharias Brohn - 19990717-4297 */
 /* Global Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,18 +17,6 @@ body {
 
   a {
     color: rgb(184, 236, 255) !important;
-  }
-
-  #navbar {
-    background-color: #1a252f !important;
-  }
-
-  #navbar li a {
-    color: #ecf0f1 !important;
-  }
-
-  #navbar li a:hover {
-    background-color: #34495e !important;
   }
 
   h1, h2, h3 {
@@ -79,34 +68,6 @@ body {
   }
 }
 
-
-#navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #2c3e50;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-#navbar li {
-  float: left;
-}
-
-#navbar li button {
-  display: block;
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-#navbar li button:hover {
-  background-color: #2980b9
-}
-
 a {
   color: #2c3e50;
 }
@@ -156,8 +117,66 @@ ol li {
   padding: 10px 15px 10px 0;
 }
 
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #2c3e50f9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+#navbar li {
+  float: left;
+}
+
+#navbar button {
+  background-color: transparent !important;
+  color: white;
+  border: none;
+  border-radius: 0 !important;
+  padding: 5px 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#navbar button:hover {
+  background-color: #2980b9 !important;
+}
+
+.dropdown-content h2 {
+  clear: both;
+}
+
+.dropdown-content li {
+  margin: 0 0 10px 0 !important;
+  padding: 0 !important;
+  width: 95%;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.fieldset ol {
+  margin: 5px 10px;
+  padding: 0 !important;
+}
+
 p1 {
   margin: 5px 10px;
+}
+
+sup {
+  vertical-align: super;
+  line-height: 1;
 }
 
 boxh1 {
@@ -171,7 +190,6 @@ boxh1 {
   max-width: 500px;
 }
 
-/* People List */
 #people {
   display: flex;
   justify-content: space-between;
@@ -194,7 +212,6 @@ boxh1 {
   font-size: 1em;
 }
 
-/* Economy List */
 #economy {
   padding: 15px;
   background-color: #f1c40f;
@@ -214,7 +231,6 @@ boxh1 {
   font-size: 1em;
 }
 
-/* Form Fields */
 .fieldset {
   border: none;
   display: flex;
@@ -263,48 +279,4 @@ button:hover {
 
 #actions button {
   margin-right: 15px;
-}
-
-/* Responsive Media Queries 
-@media (max-width: 768px) {
-  body {
-    padding: 30px 0;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.6em;
-  }
-
-  ul {
-    max-width: 100%;
-  }
-
-  #people li, #economy li {
-    font-size: 0.9em;
-    padding: 8px 12px;
-  }
-
-  .fieldset {
-    max-width: 90%;
-    padding: 15px;
-  }
-
-  button {
-    padding: 1px 15px;
-    font-size: 0.9em;
-  }
-
-  #actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #actions button {
-    margin-bottom: 15px;
-    width: auto;
-  }
 }

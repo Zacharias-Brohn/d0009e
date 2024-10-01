@@ -1,10 +1,20 @@
+/* Zacharias Brohn - 19990717-4297 */
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #2c3e50 !important;
+    background-color: #2c3e50;
     color: #ecf0f1;
   }
 }
 
+/* Light Mode */
 @media (prefers-color-scheme: light) {
   body {
     background-color: #f4f4f9;
@@ -14,12 +24,6 @@
 
 ol {
   display: block;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 .iframesection {
@@ -34,54 +38,3 @@ iframe {
   border: none;
 }
 
-#navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #2c3e50;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-#navbar li {
-  float: left;
-  position: relative;
-}
-
-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #2980b9;
-}
-
-.dropdown-content {
-  display: none;
-  visibility: hidden; /* Add this to control visibility */
-  opacity: 0; /* Add this to control opacity */
-  transition: opacity 0.3s ease;
-  z-index: 9999;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 12px;
-  border: 1px solid #ccc;
-}
-
-.show {
-  display: block;
-  visibility: visible;
-  opacity: 1;
-}
