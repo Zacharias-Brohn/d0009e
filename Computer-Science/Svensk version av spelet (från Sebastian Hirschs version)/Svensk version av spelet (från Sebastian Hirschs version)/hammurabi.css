@@ -12,6 +12,10 @@
   }
 }
 
+ol {
+  display: block;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -60,7 +64,12 @@ button:hover {
 }
 
 .dropdown-content {
-  display: hidden; /* Hidden by default */
+  display: none; /* Hidden by default */
+
+}
+
+.show {
+  display: block !important;
   position: absolute;
   top: 50px;
   left: 0;
@@ -68,10 +77,5 @@ button:hover {
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   padding: 12px;
-  z-index: 1;
   border: 1px solid #ccc;
-}
-
-.dropdown-content.show {
-  display: visible;
 }
