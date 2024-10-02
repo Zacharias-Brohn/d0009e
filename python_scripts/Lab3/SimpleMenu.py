@@ -6,40 +6,63 @@ sys.path.insert(1, mymodule_path)
 import Lab2.bounce
 import Lab2.derivative
 
-def display_menu():
-    print("=== Main Menu ===")
-    print("1. Option 1: Bounce function")
-    print("2. Option 2: Do Something Else")
-    print("3. Option 3: Another Task")
-    print("4. Option 4: Yet Another Task")
-    print("5. Option 5: Exit")
+def display_menu(): # GUI meny
+  print("=== Main Menu ===")
+  print("1: Bounce function")
+  print("2: Tvärsumma function")
+  print("3: Newton-Raphson function")
+  print("4: Exit")
 
-def handle_choice(choice):
-    if choice == "1":
-        print("You chose Option 1:")
-        n = int(input("Input a number to bounce:"))
-        Lab2.bounce.bounce(n)
-        break
-    elif choice == "2":
-        print("You chose Option 2:")
-    elif choice == "3":
-        print("You chose Option 3:")
-    elif choice == "4":
-        print("You chose Option 4:")
-    elif choice == "5":
-        print("Exiting...")
+def handle_choice(choice): # Hantera val, exekvera funktioner
+  if choice == 1:
+    try:
+      n = int(input("Input a number to bounce: "))
+      Lab2.bounce.bounce(n) # Använd funktion bounce från Lab2
+    except ValueError:
+      print("Invalid input, try again.\n")
+      handle_choice(choice)
+  elif choice == 2:
+    try:
+      n = int(input("Input a number to calculate: "))
+      o = Lab2.bounce.tvarsumman(n) # Använd funktion tvarsumman från Lab2
+      print(f"Sum of numbers is: {o}\n")
+    except ValueError:
+      print("Invalid input, try again.\n")
+      handle_choice(choice)
+  elif choice == 3:
+    try:
+      n = int(input("Input starting guess: "))
+      root = Lab2.derivative.solve(Lab2.derivative.exempel1,n,1e-5)
+      print(f"Root of x^2-1 with guess {n} is {root}\n")
+    except ValueError:
+      print("Invalid input, try again.\n")
+      handle_choice(choice)
+  elif choice == 4:
+    print("Exiting...")
+    exit()
+  a = None # Definiera variabel a
+  while a not in ("Y","N","y","n"): 
+    a = str(input("Would you like to run that function again? (Y/N): "))
+    if a in ("Y", "y"):
+      handle_choice(choice) # Kör om samma funktion igen
+    elif a in ("N", "n"):
+      break # Bryt ut ur loopen
     else:
-        print("Invalid choice. Please select a valid option.")
-        main()
-    return
+      print("Invalid input, try again.\n")
+  return
 
-def main():
-    while True:
-        display_menu()
-        choice = input("Enter your choice (1-5): ")
-        if choice == "1-5":
-            handle_choice(choice)
-            break
+def main(): # Visa meny och kalla hanterare
+  display_menu() 
+  try:
+    choice = int(input("Enter your choice (1-4): "))
+    if choice in range(1,5): # Se till att val är mellan 1 och 4
+      print(f"You chose option {choice}\n")
+      handle_choice(choice)
+    raise ValueError
+  except ValueError:
+    print("Invalid input, try again.\n")
+  return
 
-if __name__ == "__main__":
-    main()
+
+while True: # Visa meny vid start och vid return
+  main()

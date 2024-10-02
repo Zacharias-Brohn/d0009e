@@ -25,7 +25,7 @@ def tvarsumman(n):
     if n < 0:
         print("needs positive value")
         return
-    if n == 0:
+    elif n == 0:
         return 0
     else:
         # Rekursiv funktion där sista numret adderas till rest nummer
