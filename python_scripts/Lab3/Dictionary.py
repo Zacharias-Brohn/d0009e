@@ -21,7 +21,8 @@ def print_menu(): # GUI meny
   print("\n=== Main Menu ===")
   print("1: Insert word")
   print("2: Lookup word")
-  print("3: Exit")
+  print("3: Delete word")
+  print("4: Exit")
 
 def runMainLists():     # Ordlista med listor
   wordList = []         # Beskriva listorna
@@ -46,6 +47,9 @@ def handle_choiceLists(choice, wordList, descriptionList):
     word = str(input("Write the word you want to lookup: "))
     lookupWordLists(word, wordList, descriptionList)
   elif choice == 3:
+    word = str(input("Write the word you want to remove: "))
+    removeWordLists(word, wordList, descriptionList)
+  elif choice == 4:
     print("Exiting...")
     exit()
   return
@@ -64,6 +68,16 @@ def lookupWordLists(word, wordList, descriptionList):
     print(f"'{word}' was not found in dictionary.")
   return
 
+def removeWordLists(word, wordList, descriptionList)
+  if word in wordList:
+    index = wordList.index(word) # Index av samma anledning som lookup
+    wordList.pop(index) # Pop tar bort ordet
+    descriptionList.pop(index) # Och definitionen 
+    print(f"Removed '{word}' with description {descriptionList[index]}")
+  else:
+    print(f"'{word}' was not found in dictionary.")
+    return
+  
 def runMainTupel(): # Samma upplägg men med tupel
   tupel = ()        # Tilldela tupel till variabel
   while True:
@@ -86,6 +100,9 @@ def handle_choiceTupel(choice, tupel):  # Hantera val
     word = str(input("Write word you want to lookup: "))
     lookupWordTupel(tupel, word)
   elif choice == 3:
+    word = str(input("Write word you want to remove: "))
+    tupel = removeWordTupel(tupel, word)
+  elif choice == 4:
     print("Exiting...") 
     exit()
   return tupel
@@ -101,6 +118,15 @@ def lookupWordTupel(tupel, word):
   else:
     print(f"'{word}' was not found in dictionary.")
   return
+
+def removeWordTupel(tupel, word):
+  if word in tupel:
+    listCnvt = tupel
+    
+    return tupel
+  else:
+    print(f"'{word}' was not found in dictionary.")
+    return
 
 def runMainDictionary():
   dictionary = {} # Tilldela variabel med dictionary
