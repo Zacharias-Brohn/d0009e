@@ -68,7 +68,7 @@ def lookupWordLists(word, wordList, descriptionList):
     print(f"'{word}' was not found in dictionary.")
   return
 
-def removeWordLists(word, wordList, descriptionList)
+def removeWordLists(word, wordList, descriptionList):
   if word in wordList:
     index = wordList.index(word) # Index av samma anledning som lookup
     wordList.pop(index) # Pop tar bort ordet
@@ -121,8 +121,12 @@ def lookupWordTupel(tupel, word):
 
 def removeWordTupel(tupel, word):
   if word in tupel:
+    index = tupel.index(word)
     listCnvt = tupel
-    
+    print(listCnvt)
+    listCnvt.pop(index)
+    print(listCnvt)
+    listCnvt.pop(index)
     return tupel
   else:
     print(f"'{word}' was not found in dictionary.")
