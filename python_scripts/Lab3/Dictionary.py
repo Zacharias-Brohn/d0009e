@@ -4,7 +4,7 @@ def runMain(): # Vilken typ av Ordlista att kalla
   print("2: Tupel")
   print("3: Dictionary")
   try:
-    val = int(input("Val: \n"))
+    val = int(input("Val: "))
     if val == 1:
       runMainLists()
     elif val == 2:
@@ -29,8 +29,8 @@ def runMainLists():     # Ordlista med listor
   descriptionList = []
   while True:           # Kör programmet oändligt så listor inte återställs
     print_menu()
-    #print(wordList)
-    #print(descriptionList)
+    print(wordList)
+    print(descriptionList)
     try:
       choice = int(input("Input menu choice: "))
       if choice in range(1,5):
@@ -57,38 +57,41 @@ def handle_choiceLists(choice, wordList, descriptionList):
   return
 
 def insertWordLists(word, description, wordList, descriptionList):
-  wordList.append(word)               # Lägg till i Ordlista
-  descriptionList.append(description) # Lägg till i definitions lista
-  print(f"Added '{word}' with description '{description}' to the dictionary.")
+  if word in wordList:
+    print(f"'{word}' is already defined, you can only insert new words.")
+  else:
+    wordList.append(word)               # Lägg till i Ordlista
+    descriptionList.append(description) # Lägg till i definitions lista
+    print(f"Added '{word}' with description '{description}' to the dictionary.")
   return
 
 def lookupWordLists(word, wordList, descriptionList):
-  try:            # Kollar om ordet finns
+  try:                            # Kollar om ordet finns
     index = wordList.index(word)  # Samma index på ordet som definition
     print(f"Description of '{word}': {descriptionList[index]}")
-  except ValueError:
+  except ValueError:              # Fångar om ordet inte finns i Ordlistan
     print(f"'{word}' was not found in dictionary.")
     return
 
 def removeWordLists(word, wordList, descriptionList):
   try:
-    index = wordList.index(word) # Index av samma anledning som lookup
-    wordList.pop(index) # Pop tar bort ordet
-    descriptionList.pop(index) # Och definitionen 
+    index = wordList.index(word)  # Index av samma anledning som lookup
     print(f"Removed '{word}' with description {descriptionList[index]}")
-  except ValueError:
+    wordList.pop(index)           # Pop tar bort ordet
+    descriptionList.pop(index)    # Och definitionen 
+  except ValueError:              # Fångar om order inte finns i Ordlistan
     print(f"'{word}' was not found in dictionary.")
     return
   
 def runMainTupel(): # Samma upplägg men med tupel
-  tupel = ()        # Tilldela tupel till variabel
+  tupel = []        # Tilldela tupel till variabel
   while True:
     print_menu()
     print(tupel)
     try:
       choice = int(input("Input menu choice: "))
       if choice in range(1,5):
-        tupel = handle_choiceTupel(choice, tupel) # Måste tilldela till tupel
+        handle_choiceTupel(choice, tupel) # Måste tilldela till tupel
       else:
         raise ValueError
     except ValueError:
@@ -98,7 +101,7 @@ def handle_choiceTupel(choice, tupel):  # Hantera val
   if choice == 1:
     word = str(input("Write the word you want to add: "))
     desc = str(input("Write the description of the word: "))
-    tupel = insertWordTupel(tupel, word, desc)  # Samma här, tilldela till tupel
+    insertWordTupel(tupel, word, desc)
   elif choice == 2:
     word = str(input("Write word you want to lookup: "))
     lookupWordTupel(tupel, word)
@@ -111,43 +114,37 @@ def handle_choiceTupel(choice, tupel):  # Hantera val
   return tupel
 
 def insertWordTupel(tupel, word, desc):
-  print(f"Added '{word}' with description '{desc}' to the dictionary.")
-  return tupel + (word,desc) # Returnera ord och definition
+  if word in tupel:
+    print(f"'{word}' is already defined, you can only insert new words.")
+    return
+  else:
+    print(f"Added '{word}' with description '{desc}' to the dictionary.")
+  return tupel.append((word,desc)) # Returnera ord och definition
 
 def lookupWordTupel(tupel, word):
-  try:                          # Kolla att ordet finns
-    index = tupel.index(word)   # Index av ordet
-    print(f"Description of '{word}': {tupel[(index+1)]}") # Skriver index+1 för att få definition
-  except ValueError:
-    print(f"'{word}' was not found in dictionary.")
-    return
+  for i in tupel:
+    if word in i:   # Index av ordet
+      print(f"Description of '{word}': {i[1]}") # Skriver index+1 för att ta fram definition
+      return
+  print(f"'{word}' was not found in dictionary.")
+  return
 
 def removeWordTupel(tupel, word):
   if word in tupel:
     index = tupel.index(word)
-    if index % 2:
+    if index % 2: # Index på definitioner i tupeln är alltid udda
       print(f"'{word}' was not found in dictionary.")
     else:
-      tupel = tupel[:index] + tupel[index+2:]
+      tupel = tupel[:index] + tupel[index+2:] # Slice/skär tupeln
   else:
     print(f"'{word}' was not found in dictionary.")
   return tupel
-  #try:
-  #  index = tupel.index(word)
-  #  listCnvt = list(tupel)  # Konvertera till lista
-  #  listCnvt.pop(index)     # Pop tar bort ordet
-  #  listCnvt.pop(index)     # Igen för beskrivningen tar ordets plats
-  #  tupel = tuple(listCnvt) # Tillbaka till tupel
-  #  return tupel
-  #except ValueError:        # Fångar om ordet inte finns
-  #  print(f"'{word}' was not found in dictionary.")
-  #  return
 
 def runMainDictionary():
   dictionary = {} # Tilldela variabel med dictionary
   while True:
     print_menu()
-    # print(dictionary)
+    print(dictionary)
     try:
       choice = int(input("Input menu choice: "))
       if choice in range(1,5):
@@ -173,8 +170,12 @@ def handle_choiceDictionary(choice, dictionary):
     exit()
 
 def insertWordDictionary(dictionary, word, desc):
-  dictionary[word] = desc # Lägg till ord och definition till Ordlista
-  print(f"Added '{word}' with description '{desc}' to the dictionary.\n")
+  if word in dictionary:
+    print(f"'{word}' is already defined, you can only insert new words.")
+  else:
+    dictionary[word] = desc # Lägg till ord och definition till Ordlista
+    print(f"Added '{word}' with description '{desc}' to the dictionary.\n")
+  return
 
 def lookupWordDictionary(dictionary, word):
   if word in dictionary:  # Kolla om ordet finns
