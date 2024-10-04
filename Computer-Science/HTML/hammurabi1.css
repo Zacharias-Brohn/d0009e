@@ -175,7 +175,7 @@ ol li {
   padding: 0 !important;
 }
 
-p1 {
+p {
   margin: 5px 10px;
 }
 
@@ -184,9 +184,10 @@ sup {
   line-height: 1;
 }
 
-boxh1 {
+h4 {
   font-size: 1.2em;
   margin-bottom: 10px;
+  font-weight: normal;
 }
 
 #people, #economy {
@@ -252,7 +253,7 @@ boxh1 {
 }
 
 input[type="range"] {
-  width: 100%;
+  width: 90%;
 }
 
 button-container {
