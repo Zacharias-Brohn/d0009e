@@ -105,5 +105,5 @@ def main():
             print("Unknown command or invalid arguments")
 
 # Starta programmet
-if __name__ == "__main__":
+while True:
     main()
