@@ -6,7 +6,7 @@ class PhoneBook:        # Klass för telefonbok
         # Se till att namn -och- nummer inte finns
         if name in self.book:
             print(f"{name} already exists")
-        elif any(num == number for num in self.book.values()):
+        elif number in self.book.values():
             print(f"{number} already exists")
         else:
             self.book[name] = number
@@ -26,12 +26,14 @@ class PhoneBook:        # Klass för telefonbok
             print("name not found or duplicate name")
 
     def change(self, name, new_number):
-        if name in self.book:
+        if name in self.book and new_number not in self.book.values():
             old_number = self.book[name]
             for key in self.book:
                 # Ändra numret hos alla namn som har samma nummer (Alias)
                 if self.book[key] == old_number:
                     self.book[key] = new_number
+        elif new_number in self.book.values():
+            print(f"{new_number} is a duplicate number")
         else:
             print(f"{name} not found")
 
@@ -100,7 +102,7 @@ def main():
             name = command[1]
             phonebook.remove(name)
         elif action == "quit":
-            break
+            quit()
         else:
             print("Unknown command or invalid arguments")
 
