@@ -41,7 +41,8 @@ class PhoneBook:        # Klass för telefonbok
         try:  # try-except om det inte skulle gå att skriva filen
             with open(filename, 'w') as f:
                 for name, number in self.book.items():
-                    f.write(f"{number};{name};\n")  # Formattering i filen som sparas
+                    # Formattering i filen som sparas
+                    f.write(f"{number};{name};\n")
             print(f"Phonebook saved to {filename}")
         except IOError:
             print(f"Error saving to {filename}")
@@ -49,7 +50,7 @@ class PhoneBook:        # Klass för telefonbok
     def load(self, filename):
         try:
             with open(filename, 'r') as f:
-                self.book.clear() # Töm nuvarande bok
+                self.book.clear()  # Töm nuvarande bok
                 for line in f:
                     # Ladda namnen till minnet, ignorera 3:e valutan
                     number, name, _ = line.strip().split(';')
@@ -57,7 +58,7 @@ class PhoneBook:        # Klass för telefonbok
             print(f"Phonebook loaded from {filename}")
         except IOError:
             print(f"'{filename}' doesn't exist.")
-    
+
     def remove(self, name):
         if name in self.book:
             # Spara numret associerat till namnet
@@ -70,11 +71,12 @@ class PhoneBook:        # Klass för telefonbok
         else:
             print(f"{name} not found in the phone book.")
 
+
 def main():
     phonebook = PhoneBook()
 
     while True:
-        command = input("telebok> ").strip().split() # Splittra kommandon
+        command = input("telebok> ").strip().split()  # Splittra kommandon
         if len(command) == 0:
             continue
         # Lowercase konvertering för enklare hantering
@@ -105,6 +107,7 @@ def main():
             quit()
         else:
             print("Unknown command or invalid arguments")
+
 
 # Starta programmet
 while True:
