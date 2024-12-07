@@ -1,3 +1,5 @@
+import sys
+
 def runMain(): # Vilken typ av Ordlista att kalla
   print("=== Choose type ===")
   print("1: Listor")
@@ -29,8 +31,6 @@ def runMainLists():     # Ordlista med listor
   descriptionList = []
   while True:           # Kör programmet oändligt så listor inte återställs
     print_menu()
-    print(wordList)
-    print(descriptionList)
     try:
       choice = int(input("Input menu choice: "))
       if choice in range(1,5):
@@ -87,7 +87,6 @@ def runMainTupel(): # Samma upplägg men med tupel
   tupel = []        # Tilldela tupel till variabel
   while True:
     print_menu()
-    print(tupel)
     try:
       choice = int(input("Input menu choice: "))
       if choice in range(1,5):
@@ -135,59 +134,63 @@ def removeWordTupel(tupel, word):
     if index % 2: # Index på definitioner i tupeln är alltid udda
       print(f"'{word}' was not found in dictionary.")
     else:
-      tupel = tupel[:index] + tupel[index+2:] # Slice/skär tupeln
+      tupel = tupel[:index] + tupel[index+2:] # Slice/sk��r tupeln
   else:
     print(f"'{word}' was not found in dictionary.")
   return tupel
 
 def runMainDictionary():
-  dictionary = {} # Tilldela variabel med dictionary
-  while True:
-    print_menu()
-    print(dictionary)
-    try:
-      choice = int(input("Input menu choice: "))
-      if choice in range(1,5):
-        handle_choiceDictionary(choice, dictionary)
-      else:
-        raise ValueError
-    except ValueError:
-      print("Invalid input, try again.\n")
+    """Main function to run the dictionary program."""
+    dictionary = {}  # Initialize dictionary
+    while True:
+        print_menu()
+        print(dictionary)
+        try:
+            choice = int(input("Input menu choice: "))
+            if choice in range(1, 5):
+                handle_choiceDictionary(choice, dictionary)
+            else:
+                raise ValueError
+        except ValueError:
+            print("Invalid input, try again.\n")
 
 def handle_choiceDictionary(choice, dictionary):
-  if choice == 1:
-    word = str(input("Write the word you want to add: "))
-    desc = str(input("Write the description of the word: "))
-    insertWordDictionary(dictionary, word, desc)
-  elif choice == 2:
-    word = str(input("Write the word you want to lookup: "))
-    lookupWordDictionary(dictionary, word)
-  elif choice == 3:
-    word = str(input("Write the word you want to remove: "))
-    removeWordDictionary(dictionary, word)
-  elif choice == 4:
-    print("Exiting...\n")
-    exit()
+    """Handle menu choices for the dictionary."""
+    if choice == 1:
+        word = input("Write the word you want to add: ")
+        desc = input("Write the description of the word: ")
+        insertWordDictionary(dictionary, word, desc)
+    elif choice == 2:
+        word = input("Write the word you want to lookup: ")
+        lookupWordDictionary(dictionary, word)
+    elif choice == 3:
+        word = input("Write the word you want to remove: ")
+        removeWordDictionary(dictionary, word)
+    elif choice == 4:
+        print("Exiting...\n")
+        sys.exit()
 
 def insertWordDictionary(dictionary, word, desc):
-  if word in dictionary:
-    print(f"'{word}' is already defined, you can only insert new words.")
-  else:
-    dictionary[word] = desc # Lägg till ord och definition till Ordlista
-    print(f"Added '{word}' with description '{desc}' to the dictionary.\n")
-  return
+    """Insert a word and its description into the dictionary."""
+    if word in dictionary:
+        print(f"'{word}' is already defined, you can only insert new words.")
+    else:
+        dictionary[word] = desc  # Add word and definition to dictionary
+        print(f"Added '{word}' with description '{desc}' to the dictionary.\n")
 
 def lookupWordDictionary(dictionary, word):
-  if word in dictionary:  # Kolla om ordet finns
-    print(f"Description of '{word}': {dictionary[word]}.")
-  else:
-    print(f"'{word}' was not found in the dictionary.\n")
+    """Lookup a word in the dictionary."""
+    if word in dictionary:  # Check if the word exists
+        print(f"Description of '{word}': {dictionary[word]}.")
+    else:
+        print(f"'{word}' was not found in the dictionary.\n")
 
 def removeWordDictionary(dictionary, word):
-  try:
-    dictionary.pop(word)
-  except KeyError:
-    print(f"'{word}' was not found in the dictionary.\n")
-    return
+    """Remove a word from the dictionary."""
+    if word in dictionary:
+        del dictionary[word]
+        print(f"Removed '{word}' from the dictionary.\n")
+    else:
+        print(f"'{word}' was not found in the dictionary.\n")
 
 runMain()
