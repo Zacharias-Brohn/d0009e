@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+För att beräkna arbetet \( W \) som utförs av gasen under en reversibel expansion där trycket ges av \( p = \frac{C}{V} \), kan vi använda följande formel för arbete i en reversibel process:
+
+\[
+W = \int_{V_i}^{V_f} p \, dV
+\]
+
+Där \( V_i \) är initialvolymen och \( V_f \) är slutvolymen. Eftersom \( p = \frac{C}{V} \), kan vi skriva om integralen som:
+
+\[
+W = \int_{V_i}^{V_f} \frac{C}{V} \, dV
+\]
+
+Integralen av \( \frac{1}{V} \) är \( \ln(V) \), så vi får:
+
+\[
+W = C \int_{V_i}^{V_f} \frac{1}{V} \, dV = C [\ln(V)]_{V_i}^{V_f}
+\]
+
+Detta ger oss:
+
+\[
+W = C (\ln(V_f) - \ln(V_i)) = C \ln\left(\frac{V_f}{V_i}\right)
+\]
+
+Nu kan vi sätta in värdena:
+
+- \( C = 1,24 \)
+- \( V_i = 2,339 \times 10^{-3} \, \text{m}^3 \)
+- \( V_f = 4,61 \times 10^{-3} \, \text{m}^3 \)
+
+\[
+W = 1,24 \ln\left(\frac{4,61 \times 10^{-3}}{2,339 \times 10^{-3}}\right)
+\]
+
+vilket ger
+
+\[
+W = 1,24 \ln\left(\frac{4,61}{2,339}\right)
+\]
+
+Beräkna kvoten:
+
+\[
+\frac{4,61}{2,339} \approx 1,971
+\]
+
+Och sedan logaritmen:
+
+\[
+\ln(1,971) \approx 0,679
+\]
+
+Slutligen multiplicerar vi med konstanten \( C \):
+
+\[
+W = 1,24 \times 0,679 \approx 0,841 \, \text{J}
+\]
+
+Så arbetet som utförs av gasen under expansionen är ungefär \( 0,840 \, \text{J} \).
+
+\end{document}
