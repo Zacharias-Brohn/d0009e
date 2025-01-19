@@ -8,7 +8,7 @@ class PhoneBook:        # Klass för telefonbok
             print(f"{name} already exists")
         elif number in self.book.values():
             print(f"{number} already exists")
-        # Annars skriv...
+            # Annars skriv...
         else:
             self.book[name] = number
 

@@ -12,6 +12,8 @@ def bounce(n):
     # Pga. python funk. stack skriv upp från 0
     print(n)
 
+bounce(5)
+
 def bounce2(n):
     # Loop räknar ned från n till 0
     for i in range(n, -1, -1):
