@@ -12,7 +12,6 @@ public class LifeLength {
     }
 
     public static int recLifeLength( int a0 ) {
-        count = 0;
         if ( a0 == 1 ) {
             return 0;
         } else {
@@ -30,8 +29,11 @@ public class LifeLength {
         return count;
     }
 
-    public static String intsToString( int a0 ) {
-        return "The life length of " + a0 + " is " + iterLifeLength( a0 ) + ".";
+    public static String intsToStringIter( int a0 ) {
+        return "\nThe life length of " + a0 + " is " + iterLifeLength( a0 ) + ", solved iteratively.";
+    }
+    public static String intsToStringRec( int a0 ) {
+        return "\nThe life length of " + a0 + " is " + recLifeLength( a0 ) + ", solved recursively.";
     }
 
     public static int f1( int a0 ) {
@@ -73,21 +75,11 @@ public class LifeLength {
         int a0 = 0;
         int n = 0;
         Scanner scan = new Scanner( System.in );
-        do {
-            try {
-                System.out.print( "Skriv in ett heltal (> 0): " );
-                a0 = scan.nextInt();
+        for ( int i = 15; i > 0; i-- ) {
+            System.out.println( intsToStringIter( i ) );
+            System.out.println( intsToStringRec( i ) );
+        }
 
-                if ( a0 == 0 ) {
-                    break;
-                }
-
-                System.out.print( "\n" + intsToString( a0 ) + "\n" );
-            } catch ( Exception e ) {
-                System.out.println( "\nFel: Ej ett heltal > 0\n" );
-                // Clear scanner buffer
-                scan.next();
-            }
         //do {
         //    try {
         //        System.out.print( "Skriv in ett heltal (> 0): " );
@@ -136,7 +128,7 @@ public class LifeLength {
             //for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
             //    System.out.println(entry.getKey() + " = " + entry.getValue() + "\n");
             //}
-        } while ( a0 > 0 );
-        scan.close();
+        //} while ( a0 > 0 );
+        //scan.close();
     }
 }
