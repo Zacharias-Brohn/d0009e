@@ -71,64 +71,135 @@ public class LifeLength {
         return f16( value );
     }
 
-    public static void main( String[] args ) {
+    public static String task1( ) {
         int a0 = 0;
-        int n = 0;
         Scanner scan = new Scanner( System.in );
-        for ( int i = 15; i > 0; i-- ) {
+        do {
+            try {
+                System.out.print( "Skriv in ett heltal större än 0: " );
+                a0 = scan.nextInt();
+            } catch ( Exception e ) {
+                System.out.println( "Fel: Ej ett heltal > 0" );
+                // Clear the buffer
+                scan.next();
+            }
+            if ( a0 == 0 ) {
+                break;
+            }
+            System.out.println( f1( a0 ) );
+        } while ( a0 > 0 );
+        return null;
+    }
+
+    public static String task2( ) {
+        int a0 = 0;
+        Scanner scan = new Scanner( System.in );
+        do {
+            try {
+                System.out.print( "Skriv in ett heltal större än 0: " );
+                a0 = scan.nextInt();
+            } catch ( Exception e ) {
+                System.out.println( "Fel: Ej ett heltal > 0" );
+                scan.next();
+            }
+            if ( a0 == 0 ) {
+                break;
+            }
+
+
+            // LinkedHashMap of function values
+            LinkedHashMap<String, Integer> dictionary = new LinkedHashMap<>();
+            dictionary.put( "f(1)", f1( a0 ) );
+            dictionary.put( "f(2)", f2( a0 ) );
+            dictionary.put( "f(4)", f4( a0 ) );
+            dictionary.put( "f(8)", f8( a0 ) );
+            dictionary.put( "f(16)", f16( a0 ) );
+            dictionary.put( "f(32)", f32( a0 ) ); 
+
+            // Print out the values one after another
+            for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
+                System.out.println(entry.getKey() + " = " + entry.getValue() + "\n");
+            }
+        } while ( a0 > 0 );
+        return null;
+    }
+
+    public static String task3( ) {
+        int n = 0;
+        int a0 = 0;
+        Scanner scan = new Scanner( System.in );
+        do {
+            try {
+                System.out.print( "Skriv in ett heltal (> 0): " );
+                a0 = scan.nextInt();
+
+                if ( a0 == 0 ) {
+                    break;
+                }
+
+                System.out.print( "\nAnge antal iterationer (> 0): " );
+                n = scan.nextInt();
+
+                System.out.println( 
+                    "\nf" + n + "(" + a0 + ") = " + iterateF( a0, n ) + "\n" 
+                );
+
+            } catch ( Exception e ) {
+                System.out.println( "\nFel: Ej ett heltal > 0\n" );
+                scan.next();
+            }
+        } while ( a0 > 0 );
+        return null;
+    }
+
+    public static String task4( ) {
+        int range = 15;
+        for ( int i = 1; i <= range; i++ ) {
             System.out.println( intsToStringIter( i ) );
+        }
+        return null;
+    }
+
+    public static String task6( ) {
+        int range = 15;
+        for ( int i = 1; i <= range; i++ ) {
             System.out.println( intsToStringRec( i ) );
         }
+        return null;
+    }
 
-        //do {
-        //    try {
-        //        System.out.print( "Skriv in ett heltal (> 0): " );
-        //        a0 = scan.nextInt();
-        //
-        //        if ( a0 == 0 ) {
-        //            break;
-        //        }
-        //
-        //        System.out.print( "\nAnge antal iterationer (> 0): " );
-        //        n = scan.nextInt();
-        //
-        //        System.out.println( 
-        //            "\nf" + n + "(" + a0 + ") = " + iterateF( a0, n ) + "\n" 
-        //        );
-        //
-        //    } catch ( Exception e ) {
-        //        System.out.println( "\nFel: Ej ett heltal > 0\n" );
-        //        // Clear scanner buffer
-        //        scan.next();
-        //    }
-            
+    public static void main( String[] args ) {
+        Scanner scan = new Scanner( System.in );
+        int n = 0;
+        do {
+            try {
+                System.out.print( "Välj uppgift (1,2,3,4,6): " );
+                n = scan.nextInt();
+                if ( n == 0 ) {
+                    break;
+                }
+            } catch ( Exception e ) {
+                System.out.println( "Fel: Ej ett heltal" );
+                scan.next();
+            }
 
-        //do {
-        //    try {
-        //        System.out.print( "Skriv in ett heltal större än 0: " );
-        //        a0 = scan.nextInt();
-        //    } catch ( Exception e ) {
-        //        System.out.println( "Fel: Ej ett heltal > 0" );
-        //    }
-        //    if ( a0 == 0 ) {
-        //        break;
-        //    }
-
-
-            //// LinkedHashMap of function values
-            //LinkedHashMap<String, Integer> dictionary = new LinkedHashMap<>();
-            //dictionary.put( "f(1)", f1( a0 ) );
-            //dictionary.put( "f(2)", f2( a0 ) );
-            //dictionary.put( "f(4)", f4( a0 ) );
-            //dictionary.put( "f(8)", f8( a0 ) );
-            //dictionary.put( "f(16)", f16( a0 ) );
-            //dictionary.put( "f(32)", f32( a0 ) ); 
-            //
-            //// Print out the values one after another
-            //for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
-            //    System.out.println(entry.getKey() + " = " + entry.getValue() + "\n");
-            //}
-        //} while ( a0 > 0 );
-        //scan.close();
+            switch ( n ) {
+                case 1:
+                    task1();
+                    break;
+                case 2:
+                    task2();
+                    break;
+                case 3:
+                    task3();
+                    break;
+                case 4:
+                    task4();
+                    break;
+                case 6:
+                    task6();
+                    break;
+            }
+        } while ( true );
     }
 }
