@@ -30,6 +30,7 @@ public class MyArrayList<E> implements Serializable, Cloneable, Iterable<E>,
     private E[] array;
     private int size;
 
+    @SuppressWarnings("unchecked")
 	public MyArrayList(int initialCapacity) {
 		/* ska implementeras */
         if ( initialCapacity < 0 ) {
@@ -66,6 +67,7 @@ public class MyArrayList<E> implements Serializable, Cloneable, Iterable<E>,
 	}
 
 	@Override
+    @SuppressWarnings("unchecked")
 	public void clear() {
 		/* ska implementeras */
         array = ( E[] ) new Object[ array.length ];
@@ -74,6 +76,7 @@ public class MyArrayList<E> implements Serializable, Cloneable, Iterable<E>,
 
 	// -- 2 --
 
+    @SuppressWarnings("unchecked")
 	public void ensureCapacity(int minCapacity) {
 		/* ska implementeras */
         if ( array.length < minCapacity ) {
@@ -217,6 +220,7 @@ public class MyArrayList<E> implements Serializable, Cloneable, Iterable<E>,
 	// -- 7 --
 
 	@Override
+    @SuppressWarnings("unchecked")
 	public Object clone() {
 		/* ska implementeras */
         try {
