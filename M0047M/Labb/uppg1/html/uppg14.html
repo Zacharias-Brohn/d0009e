@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>uppg14</title>
+<meta name="generator" content="MATLAB 24.2">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-03-11">
+<meta name="DC.source" content="uppg14.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<p>Vi har <img src="uppg14_eq03754244727576710068.png" alt="$x + (10 - x) = 10$">. Om vi anv&auml;nder det tillsammans med f&ouml;rklaringen av problemet kan vi skriva funktionen som</p>
+<p>
+<img src="uppg14_eq05724141381067377566.png" alt="$$ f(x) = x^3 + (10 - x)^2 $$"></p>
+<p>F&ouml;rst plottar vi funktionen f&ouml;r att se ungef&auml;r var minimumv&auml;rdet ligger</p>
+<pre class="codeinput">x = linspace(0, 10, 1000);
+f = @(x) x.^3 + (10 - x).^2;
+plot(x, f(x));
+xlabel(<span class="string">'x'</span>);
+ylabel(<span class="string">'f(x)'</span>);
+grid <span class="string">on</span>;
+</pre>
+<img vspace="5" hspace="5" src="uppg14_01.png" alt=""> <p>D&aring; ser det ut som att minimumv&auml;rdet ligger mellan <img src="uppg14_eq18380325832359392594.png" alt="$2 < x < 3$">.</p>
+<p>Nu kan vi skriva kod f&ouml;r att r&auml;kna ut minimumv&auml;rdet samt summan</p>
+<pre class="codeinput">[x_min, f_min] = fminbnd(f, 0, 10);
+disp([<span class="string">'Minimum value occurs at x = '</span>, num2str(x_min)]);
+disp([<span class="string">'Minimum value of f(x) = '</span>, num2str(f_min)]);
+</pre>
+<pre class="codeoutput">Minimum value occurs at x = 2.2701
+Minimum value of f(x) = 71.45
+</pre>
+<p>Allts&aring; f&aring;r vi svaret att</p>
+<p>
+<img src="uppg14_eq15224979234679619520.png" alt="$$ x_{crit} \approx 2,2701 $$"></p>
+<p>vilket ger</p>
+<p>
+<img src="uppg14_eq15646941644922247981.png" alt="$$ f(2,2701) \approx 71,45. $$"></p>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024b</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%%
+% Vi har $x + (10 - x) = 10$. Om vi använder det tillsammans med förklaringen av
+% problemet kan vi skriva funktionen som
+%
+% $$ f(x) = x^3 + (10 - x)^2 $$
+% 
+% Först plottar vi funktionen för att se ungefär var minimumvärdet ligger
+x = linspace(0, 10, 1000);
+f = @(x) x.^3 + (10 - x).^2;
+plot(x, f(x));
+xlabel('x');
+ylabel('f(x)');
+grid on;
+%%
+% Då ser det ut som att minimumvärdet ligger mellan $2 < x < 3$.
+%
+% Nu kan vi skriva kod för att räkna ut minimumvärdet samt summan
+
+[x_min, f_min] = fminbnd(f, 0, 10);
+disp(['Minimum value occurs at x = ', num2str(x_min)]);
+disp(['Minimum value of f(x) = ', num2str(f_min)]);
+%%
+% Alltså får vi svaret att
+%
+% $$ x_{crit} \approx 2,2701 $$
+%
+% vilket ger
+%
+% $$ f(2,2701) \approx 71,45. $$
+
+##### SOURCE END #####
+-->
+</body>
+</html>
