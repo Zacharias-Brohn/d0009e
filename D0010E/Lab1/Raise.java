@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Raise {
     private static int recRaiseHalfCount = 0;
@@ -27,7 +29,8 @@ public class Raise {
 
     public static void main( String[] args ) {
         Scanner scan = new Scanner( System.in );
-        double x = 1.5;
+        double x = 1.0005;
+        int maxK = 30000;
         int k = 0;
         do {
             try {
@@ -47,5 +50,19 @@ public class Raise {
                 scan.next();
             }
         } while ( true );
+        //try ( FileWriter writer = new FileWriter( "raise.txt" )) {
+        //    for ( k = 1; k <= maxK; k++ ) {
+        //        recRaiseHalfCount = 0;
+        //        recRaiseOneCount = 0;
+        //
+        //        recRaiseHalf( x, k );
+        //        recRaiseOne( x, k );
+        //
+        //        writer.write( k + " " + recRaiseHalfCount + " " + recRaiseOneCount + "\n" );
+        //    }
+        //} catch ( IOException e ) {
+        //    e.printStackTrace();
+        //}
+        scan.close();
     }
 }

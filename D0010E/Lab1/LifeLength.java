@@ -87,6 +87,7 @@ public class LifeLength {
                 break;
             }
             System.out.println( f1( a0 ) );
+
         } while ( a0 > 0 );
         return null;
     }
